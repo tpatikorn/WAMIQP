@@ -1,0 +1,19 @@
+1. Download and install TortoiseGIT (School computers use 64 bits)
+2. create a new folder
+3. in the folder, right click and click "SVN checkout" the URL is
+	https://github.com/WAMIQP/WAMIQP
+4. everything should appear
+
+You can do anything on this folder and this is yours alone (nobody sees it)
+
+How to apply changes to the "shared" folder (so other people can see)
+1. right click, click "SVN update" to get the latest version if the "shared" folder
+2. right click, click "svn commit"
+3. a new window will appear. there is a list on the bottom of the window. The list shows
+	files you have editted/created. Check the boxes of the files you want everyone to see
+4. (optional, recommended) type in the comment box (so that people know what you did)
+5. click OK
+6. When asked for username and password, use:
+Username: "WAMIQP"
+password "wamiqp2014"
+7. If nothing goes wrong, it should be okay.
