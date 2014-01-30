@@ -24,10 +24,10 @@ body {
   <p>&nbsp;</p>
   <table width="100%" border="0" align="center">
     <tr>
-      <th width="12%" style="font-style: normal" scope="col">4000 BCE</th>
-      <th width="49%" scope="col">&nbsp;</th>
-      <th width="11%" scope="col">0 AD</th>
-      <th width="16%" scope="col">&nbsp;</th>
+      <th width="12%" style="font-style: normal" scope="col">600 BCE</th>
+      <th width="7%" scope="col">&nbsp;</th>
+      <th width="8%" scope="col">0 AD</th>
+      <th width="61%" scope="col">&nbsp;</th>
       <th width="12%" scope="col">2000 AD</th>
     </tr>
   </table>
@@ -47,7 +47,7 @@ body {
 <script type="text/javascript">
 $(function() {
 	$( "#Slider1" ).slider({
-		min:-4000,
+		min:-600,
 		max:2000,
 		slide:function (event, ui) {
     $("#StartYear").val(ui.values[0]);
@@ -55,7 +55,7 @@ $(function() {
 },
 		range:true,
 		step:100,
-		values:[-1000, 1000]
+		values:[-500, 1000]
 	}); 
 });
 </script>
