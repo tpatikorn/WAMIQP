@@ -18,7 +18,7 @@ body {
 <script src="colorbox-master/jquery.colorbox.js" type="text/javascript"></script>
 </head>
 
-<body style="">
+<body style="" bgcolor="grey">
 <p>&nbsp;</p>
 <div class="ui-corner-top"> 
   <p>&nbsp;</p>
@@ -46,16 +46,18 @@ body {
 </div>
 <script type="text/javascript">
 $(function() {
+	$( "#Slider1" ).css('background', 'rgb(255,0,255)'),
+	$( "#Slider1 .ui-slider-range" ).css('background', 'rgb(0,255,0)'),
 	$( "#Slider1" ).slider({
 		min:-600,
 		max:2000,
 		slide:function (event, ui) {
-    $("#StartYear").val(ui.values[0]);
-    $("#EndYear").val(ui.values[1]);
-},
-		range:true,
-		step:100,
-		values:[-500, 1000]
+			$("#StartYear").val(ui.values[0]);
+			$("#EndYear").val(ui.values[1]);
+		},
+	range:true,
+	step:100,
+	values:[-500, 1000]
 	}); 
 });
 </script>
