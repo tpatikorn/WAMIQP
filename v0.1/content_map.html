@@ -67,8 +67,17 @@ $(function() {
 		values:[-600, 2000],
 		range:true,
 	});
-	$( "#timeline_slider" ).css('background', 'rgb(250,250,250)');
+	$( "#timeline_slider").css('height','10px');
+	$( "#timeline_slider").css('width','800px');
+	$( "#timeline_slider").css('background', 'rgb(250,250,250)');
+
+	$( "#timeline_slider .ui-slider-handle").css('height','20px');
+	$( "#timeline_slider .ui-slider-handle").css('width','10px');
+	$( "#timeline_slider .ui-slider-handle" ).css('background', 'rgb(255,0,0)');
+
+	$( "#timeline_slider .ui-slider-range").css('height','15px');
 	$( "#timeline_slider .ui-slider-range" ).css('background', 'rgb(50,50,50)');
+
 	$( "#timeline_slider" ).slider({
 		slide:function (event, ui) {
 			$("#StartYear").val(ui.values[0]);
