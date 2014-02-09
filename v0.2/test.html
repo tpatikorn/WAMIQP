@@ -1,0 +1,32 @@
+<html lang="en">
+<head>  
+<meta charset="utf-8">  
+<title>click demo</title>  
+
+<style>  p {    color: red;    margin: 5px;    cursor: pointer;  }  
+p:hover {    background: yellow;  }  </style>  
+
+<script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+</head>
+<body> 
+
+
+<div id="target">  
+	Click here
+</div>
+<div id="other">  
+	Trigger the handler
+</div>
+
+<script>
+$( "#target" ).click(function() 
+{  
+	alert( "Handler for .click() called." );
+});
+
+$( "#other" ).click(function() {
+	$( "#target" ).click();
+});
+</script> 
+
+</body></html>
