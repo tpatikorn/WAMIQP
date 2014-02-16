@@ -1,0 +1,25 @@
+How to set up the program/work environment (eclipse)
+1. Download Eclipse IDE for Java EE (32 bits or 64 bits are fine. If you're unsure, pick 32 bits)
+2. Unzip the file, put the eclipse folder somewhere you'll remember.
+3. Create a shortcut to desktop, if you want to.
+4. Open eclipse.exe (the one with purple circle icon)
+5. If it's your first time, Eclipse will ask for the workspace, pick a folder you want your work to be.
+6. On the top menu, click help -> eclipse marketplace
+7. Search for "EGit" and enter
+8. You'll see "EGit - Git Team Provider". Click install
+9. Click next, next, confirm, accept agreement, next, next, etc.
+10. Restart Eclipse
+------------------------------------------------------------------------------------------------------
+Set up the project in Eclipse
+1. Click File -> import
+2. Find git -> project from Git (alternatively you can search for git). Click next.
+3. Click clone URI, then next.
+4. Fill in the following:
+	URI: https://github.com/WAMIQP/WAMIQP
+	User: WAMIQP
+	Password: wamiqp2014
+	Store in Secure store: yes...? (I believe this is like "remember me" thing.)
+5. Click next
+6. Set the directory to be any directory you want. I recommend using a folder in your own computer, not your school drive/folder)
+7. Make sure "import existing project" is checked, click next
+8. Make sure WAMIQP is checked, then finish.
