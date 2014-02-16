@@ -1,0 +1,3 @@
+object b
+There is nothing in here.
+The actual content will be somewhere else.
