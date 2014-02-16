@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<link href="resources/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+<link href="resources/colorbox.css" rel="stylesheet" type="text/css"/>
+<script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="resources/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js" type="text/javascript"></script>
+<script src="resources/colorbox/jquery.colorbox.js" type="text/javascript"></script>
+<script src="resources/jquery.ui.touch-punch/touch-punch.min.js" type="text/javascript"></script>
+<script src="resources/hammer/hammer.js" type="text/javascript"></script>
+
+<title>Map</title>
+<style type="text/css">
+div {
+	font-family: Arial;
+}
+
+p {
+	font-family: Arial;
+}
+
+.image_in_box {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+.menu_image {
+	width: 100px;
+	height: 40px;
+	padding: 30px 0px 30px 10px;
+	float: left;
+	border: 0px;
+}
+</style>
+</head>
+
+<body>
+
+	<div id="page" style="width: 1000px; height: 660px; background-color: #eeeeee; overflow: hidden">
+		<div id="content" style="width: 900px; height: 450px; background-color:#dddddd; padding:30px 50px 30px 50px">
+			<!-- Your work space is 900px by 450px -->
+			<!-- example box is just to demonstrate the size and location of your space -->
+			<!-- feel free to change/delete it if you want -->
+			<div id="example_box" style="width: 900px; height: 450px; background-color:#bbbbbb;overflow:hidden;position:relative">
+				
+			</div>
+		</div>
+		
+		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
+		<div id="menu" style="width: 900px; height: 100px; background-color:#cccccc; padding: 25px 50px 25px 50px">
+			<div id="page_name" style="width: 500px; height: 100px; background-color: #bbbbbb; float:left">
+				<h1 style="margin:20px"><b>Map</b></h1>
+			</div>
+			
+			<div id="buttons" style="width: 400px; height: 100px; background-color: #aaaaaa;float:right">
+				<a href="home.html"> <img src="resources/images/home.jpg" 
+				alt="home page" class="menu_image"/></a>
+				<a href="map.html"><img src="resources/images/map.jpg" 
+				alt="map page" class="menu_image"/></a>
+				<a href="timeline.html"><img src="resources/images/timeline.jpg" 
+				alt="timeline page" class="menu_image"/></a>
+			</div>
+			
+		</div>
+
+	</div>
+
+</body>
+</html>
