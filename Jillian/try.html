@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 
-	<title>Stable Timeline Map</title>
+	<title>Timeline</title>
 	<link href="resources/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
 	<link href="resources/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
 	<link href="resources/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
@@ -18,10 +18,7 @@
 	
 	
 <body>
-<img src="resources/images/sidebar_title.jpg" width="260" height="43" alt=""/>
-						<br>
-						<img src="contents/object_images/zuo.jpg" alt="zuo" width="150" height="150" align="left"/>
-				<div id="side_outside" style="height:300px;width:900px;float:left;background-color:#bbbbbb;overflow-y:hidden;overflow-x:hidden"> 
+				<div id="side_outside" style="height:480px;width:970px;float:left;background-color:#ffffff;overflow-y:hidden;overflow-x:hidden"> 
 				
 				<!--this is the actual box-->
 					<div id="side_inside" style="height:206px;width:2620px;background-color:#FFF"> 
@@ -91,17 +88,13 @@
 						</p>
 					</div>
 				</div>
-			</div>
+				</div>
 			
 		
-<br>
-	<img src="contents/object_images/you.jpg" alt="you" width="150" height="150" align="right"/>
-
-<br>
 	
 			
 		
-<div class="timeline" style="height:100px;width:950px;border:0px solid black">
+<div class="timeline" style="height:100px;width:970px;border:0px solid black">
 				<div>
 					<p style="font-size:10px">Alternative version: single handle. Updated 11 February 2014</p>
 					<label>The year is:</label>
@@ -120,7 +113,7 @@
 				<div id="timeline_slider" style="margin-left:20px">
 				</div>
 			</div>
-		</div>
+</div>
 		
 
 		<div id="toggle" class="content_bot" style="background-color:#cccccc;height:20px;width:975px;position:absolute;top:640px;z-index:10;padding:2.5px;overflow:hidden">
@@ -131,8 +124,7 @@
 				<img src="timeline_section.jpg" style="width:820px;height:450px;" alt=""/>
 			</div>
 		</div>
-	</div>
-</div>
+
 
 
 <script>
@@ -160,7 +152,7 @@ jQuery('a.popup_on_sidebar').colorbox({
 <script type="text/javascript">
 function SideScroll(location){
 	location = (700 + location);
-	timelocation = (1650 * (location / 2800 ))
+	timelocation = (1740* (location / 2800 ))
 	$("#side_outside").scrollLeft(timelocation);
 };
 </script>
@@ -193,35 +185,7 @@ $(function() {
 });
 </script>
 
-<script>
-function clickScrollUp(){
-		$('div.content_top').animate({height:'0'},{ duration: 600, queue: false });
-		$('div.content_bot').animate({height:'520'},{ duration: 600, queue: false });
-		$('div.content_bot').animate({top:'140'},{ duration: 600, queue: false });
-};
 
-function clickScrollDown(){
-		$('div.content_top').animate({height:'500'},{ duration: 600, queue: false });
-		$('div.content_bot').animate({height:'20'},{ duration: 600, queue: false });
-		$('div.content_bot').animate({top:'640'},{ duration: 600, queue: false });
-};
-</script>
-
-<script>
-var toggle = document.getElementById('toggle');
-
-Hammer(toggle).on("dragup",function(event) {
-	event.gesture.preventDefault();
-	event.gesture.stopDetect()
-	clickScrollUp();
-});
-
-Hammer(toggle).on("dragdown",function(event) {
-	event.gesture.preventDefault();
-	event.gesture.stopDetect()
-	clickScrollDown();
-});
-</script>
 
 </body>
 </html>
