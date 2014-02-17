@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<script src="../map_timeline/resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+<title>Insert title here</title>
+</head>
+<body>
+<label>please type helmet id</label>
+<input type="text" id="item_id">
+<button onclick="submitId()">Go</button>
+
+
+<script>
+
+
+function submitId() {
+	var element = document.getElementById('item_id');
+	var idtext = element.value;
+	idtext = "../map_timeline/content.html?itemId="+idtext;
+	window.open(idtext,"_self");
+}
+
+</script>
+</body>
+</html>
