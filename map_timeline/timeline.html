@@ -3,19 +3,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<link href="resources/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
-<link href="resources/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
-<link href="resources/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
-<link href="resources/colorbox.css" rel="stylesheet" type="text/css"/>
-<script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="resources/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js" type="text/javascript"></script>
-<script src="resources/colorbox/jquery.colorbox.js" type="text/javascript"></script>
-<script src="resources/jquery.ui.touch-punch/touch-punch.min.js" type="text/javascript"></script>
+<link href="resources/jQueryAssets/jquery.ui.core.min.css"
+	rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.theme.min.css"
+	rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.slider.min.css"
+	rel="stylesheet" type="text/css">
+<link href="resources/colorbox.css" rel="stylesheet" type="text/css" />
+<script src="resources/jQueryAssets/jquery-1.8.3.min.js"
+	type="text/javascript"></script>
+<script
+	src="resources/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js"
+	type="text/javascript"></script>
+<script src="resources/colorbox/jquery.colorbox.js"
+	type="text/javascript"></script>
+<script src="resources/jquery.ui.touch-punch/touch-punch.min.js"
+	type="text/javascript"></script>
 <script src="resources/hammer/hammer.js" type="text/javascript"></script>
 
 <title>Timeline</title>
 <style type="text/css">
-div p h1{
+div p h1 {
 	font-family: Arial;
 }
 
@@ -38,60 +46,53 @@ div p h1{
 	height: 200px;
 	border: 5px solid black;
 	float: left;
+	margin-right: 10px;
 }
 </style>
 </head>
 
 <body>
-
-	<div id="page" style="width: 1000px; height: 700px; background-color: #d0d0d0; overflow: hidden">
-		<div id="content" style="width: 98%; height: 83%; padding:1% 1% 1% 1%">
+	<script>
+		function generateLinks() {
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET", "contents/extended_label.xml", false);
+			xmlhttp.send();
+			xmlDoc = xmlhttp.responseXML;
+			var x = xmlDoc.getElementsByTagName("object");
+			for (i = 0; i < x.length; i++) {
+				var idNum = x[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+				var picname = x[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
+				var towrite = "<a href=\"content.html?itemId="+idNum+"\" class=\"popup_on_sidebar\">";
+				towrite = towrite + "<img src=\"contents\\object_images\\"+picname;
+				towrite = towrite + "\" class=\"thumbnail\" id=\"thumbnail0\" /> </a>";
+				//alert(towrite);
+				document.write(towrite);
+			}
+		}
+	</script>
+	<div id="page"
+		style="width: 1000px; height: 700px; background-color: #d0d0d0; overflow: hidden">
+		<div id="content"
+			style="width: 98%; height: 83%; padding: 1% 1% 1% 1%">
 			<!-- Your work space is 900px by 450px -->
 			<!-- example box is just to demonstrate the size and location of your space -->
 			<!-- feel free to change/delete it if you want -->
-			<div id="example_box" style="width: 100%; height: 100%;overflow:hidden;position:relative; background-color: #f0f0f0">
+			<div id="example_box"
+				style="width: 100%; height: 100%; overflow: hidden; position: relative; background-color: #f0f0f0">
 				<div id="side_outside"
-					style="width: 90%; height: 35%; background-color: #ffffff; overflow: hidden;margin: 50px;margin-top:100px">
+					style="width: 90%; height: 210px; background-color: #ffffff; overflow: hidden; margin: 50px; margin-top: 100px; overflow: hidden">
 					<!--this is the actual box-->
 					<div id="side_inside"
-						style="height: 220px; width: 2600px; background-color: #FFF">
-						<a href="contents/content_object_a.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_a.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_b.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_b.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_c.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_c.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_d.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_d.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_f.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_f.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_g.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_g.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_h.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_h.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_i.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_i.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_j.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_j.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_k.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_k.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_l.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_l.jpg" alt=""
-							class="thumbnail" />
-						</a> <a href="contents/content_object_m.html" class="popup_on_sidebar">
-							<img src="contents/object_images/object_m.jpg" alt=""
-							class="thumbnail" />
-						</a>
+						style="height: 210px; width: 2880px; background-color: #FFF">
+						<script>
+						generateLinks();
+						</script>
 					</div>
 				</div>
 				<div style="width: 100%; height: 10%">
@@ -100,17 +101,18 @@ div p h1{
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
 		<div id="menu" style="width: 98%; height: 13%; padding: 0% 1% 2% 1%">
 			<div id="page_name" style="width: 100%; height: 100%; background-color: #f8f8f8">
-							
-				<h1 style="margin:20px;float:left"><b>timeline</b></h1>
-				<a href="help.html"><img src="resources/images/help.jpg" 
+
+				<h1 style="margin:20px;float:left"><b>map</b></h1>
+
+				<a href="help.html"><img src="resources/images/help.png" 
 				alt="help page" class="menu_image"/></a>
-				<a href="map.html"><img src="resources/images/map.jpg" 
-				alt="map page" class="menu_image"/></a>
-				<a href="home.html"> <img src="resources/images/home.jpg" 
+				<a href="timeline.html"><img src="resources/images/timeline.png" 
+				alt="timeline page" class="menu_image"/></a>
+				<a href="home.html"> <img src="resources/images/home.png" 
 				alt="home page" class="menu_image"/></a>
 
 			</div>
@@ -118,10 +120,10 @@ div p h1{
 		</div>
 
 	</div>
-<script type="text/javascript">
+	<script type="text/javascript">
 		function SideScroll(location) {
 			location = (700 + location);
-			timelocation = (1635 * (location / 2800));
+			timelocation = 1970*location/2800;
 			$("#side_outside").scrollLeft(timelocation);
 		};
 	</script>
@@ -139,8 +141,14 @@ div p h1{
 			$("#timeline_slider .ui-slider-handle").css('height', '20px');
 			$("#timeline_slider .ui-slider-handle").css('width', '20px');
 			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
-
+			$( "#timeline_slider" ).slider({
+				slide:function (event, ui) {
+					SideScroll(ui.value);
+				}
+			}); 
 		});
 	</script>
+
+	
 </body>
 </html>
