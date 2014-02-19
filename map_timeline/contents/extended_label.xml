@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects_list>
 <object>
-<Accession_number></Accession_number>
+<Accession_number>1135</Accession_number>
 <Region></Region>
 <Artifact_type></Artifact_type>
 <Date></Date>
 <Materials></Materials>
 <Weight></Weight>
 <Dimensions></Dimensions>
-<Extended_label></Extended_label>
-<Picture></Picture>
+<Extended_label>object a There is nothing in here. The actual content will be somewhere else.</Extended_label>
+<Picture>1135.png</Picture>
 </object>
 
 <object>
-<Accession_number></Accession_number>
+<Accession_number>1504</Accession_number>
 <Region></Region>
 <Artifact_type></Artifact_type>
 <Date></Date>
 <Materials></Materials>
 <Weight></Weight>
 <Dimensions></Dimensions>
-<Extended_label></Extended_label>
-<Picture></Picture>
+<Extended_label>object b There is nothing in here. The actual content will be somewhere else.</Extended_label>
+<Picture>1504.png</Picture>
 </object>
 
 <object>

@@ -15,34 +15,52 @@ body p {
 </style>
 </head>
 
-<body style="width: 500px; height: 300px">
-		<div style="width: 500px; height: 300px">
-			<div style="width: 200px; float: left; align: center">
-				<img id="item_image" width="200px" height="200px" />
+<body>
+	<div style="width: 500px; height: 300px; background-color: black; padding: 10px">
+		<div style="width: 100%; height: 100%; background-color: white">
+			<div style="width: 60%; height: 100%; float: left">
+				<img id="item_image" style="height: 100%" />
 			</div>
-			<div style="width: 300px; float: right; align: center">
-				<div id="item_label" style="width: 240px"></div>
+			<div style="width: 40%; height: 100%; float: right">
+				<div id="item_label" style="width: 100%; margin: 10px"></div>
 			</div>
 		</div>
-
+	</div>
+	
+	<script>
+		function getDataFromAccessNumber(Accession_number, tagname) {
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET", "contents/extended_label.xml", false);
+			xmlhttp.send();
+			xmlDoc = xmlhttp.responseXML;
+			var x = xmlDoc.getElementsByTagName("object");
+			for (i = 0; i < x.length; i++) {
+				var accession_number = x[i]
+						.getElementsByTagName("Accession_number")[0].childNodes[0].nodeValue;
+				if (accession_number === Accession_number) {
+					return x[i].getElementsByTagName(tagname)[0].childNodes[0].nodeValue;
+				}
+			}
+			return false;
+		}
+	</script>
 
 	<script>
 		var url = location.toString();
 		var index = url.substring(url.indexOf("=") + 1);
-		var newimg = "contents/object_images/object_" + index + ".jpg";
-		var newtxt = "contents/object_labels/object_" + index + ".txt";
+		var newimg = "contents/object_images/" + getDataFromAccessNumber(index, "Picture");
+		var newtxt = getDataFromAccessNumber(index, "Extended_label");
 		$("#item_image").attr("src", newimg);
-		$("#item_label").load(newtxt);
+		document.getElementById("item_label").innerHTML = newtxt;
 		//alert(url);
 	</script>
 
-<!-- 	<script> -->
-// 	$(function(){
-// 	    parent.$.colorbox.resize({
-// 	        innerWidth:$('body').width(),
-// 	        innerHeight:$('body').height()
-// 	    });
-// 	});
-<!-- 	</script> -->
+
 </body>
 </html>
