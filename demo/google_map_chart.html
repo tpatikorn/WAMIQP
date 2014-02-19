@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+google.load('visualization', '1', {packages: ['geochart']});
+google.setOnLoadCallback(drawVisualization);
+
+function drawVisualization() {
+    var data = google.visualization.arrayToDataTable([
+        ['Country', 'HelmetID'],
+        ['Norway', 'a'],
+        ['Russua', 'b'],
+        ['China', 'c'],
+        ['France', 'd'],
+	['GB', 'e'],
+    ]);
+    
+    var view = new google.visualization.DataView(data);
+    view.setColumns([0, 1, {
+        type: 'string',
+        role: 'tooltip',
+        calc: function () {
+            return '';
+        }
+    }]);
+    
+    var options = {
+	height: '480',
+	width: '970',
+	region: 'world'
+    };
+    var geochart = new google.visualization.GeoChart(document.getElementById('visualization'));
+
+    google.visualization.events.addListener(geochart, 'select', function() {
+        var selectionIdx = geochart.getSelection()[0].row;
+        var value = data.getValue(selectionIdx, 1);
+        
+        window.open('../map_timeline/content.html?itemId=' + value,"_self");
+    });
+
+    geochart.draw(view, options);
+}
+
+    </script>
+  </head>
+  <body>
+    <div id="visualization"></div>
+  </body>
+</html>

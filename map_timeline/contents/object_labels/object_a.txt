@@ -1,3 +1,0 @@
-object a
-There is nothing in here.
-The actual content will be somewhere else.

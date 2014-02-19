@@ -19,6 +19,11 @@ div p h1{
 	font-family: Arial;
 }
 
+.jvectormap-region {
+	stroke: #000000;
+	stroke-width: 0.2px;
+}
+
 .image_in_box {
 	position: absolute;
 	right: 0px;
@@ -39,10 +44,136 @@ div p h1{
 
 	<div id="page" style="width: 1000px; height: 700px; background-color: #d0d0d0; overflow: hidden">
 		<div id="content" style="width: 98%; height: 83%; padding:1% 1% 1% 1%">
-			<!-- Your work space is 900px by 450px -->
+			<!-- Your work space is 980px by 581px -->
 			<!-- example box is just to demonstrate the size and location of your space -->
 			<!-- feel free to change/delete it if you want -->
 			<div id="example_box" style="width: 100%; height: 100%;overflow:hidden;position:relative; background-color: #f0f0f0">
+			
+			
+		<link rel="stylesheet"
+	href="../map_timeline/resources/jvectormap/jquery-jvectormap-1.2.2.css"
+	type="text/css" media="screen" />
+<script src="../map_timeline/resources/MapResources/jQueryAssets/jquery-1.8.3.min.js"></script>
+<script src="../map_timeline/resources/MapResources/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="../map_timeline/resources/MapResources/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../map_timeline/resources/MapResources/gdp-data.js"></script>
+
+</head>
+<body>
+	<div style="width:978px;height:579px;overflow:hidden;position:relative;border:0px solid blue">
+	<div id="world-map" style="width:2152px; height: 1274px; position:absolute; top:-230px; right:-260px">
+	
+	</div>
+	</div>
+	
+	
+	
+	
+	
+	<script>
+		var markers = [ { 
+			latLng : [ 63, 93 ],
+			name : 'a',
+		}, {
+			latLng : [ 46.5, 2.2 ],
+			name : 'b',
+		}, {
+			latLng : [ 43.2, 12 ],
+			name : 'c',
+		}, {
+			latLng : [ 52.3, 11.8 ],
+			name : 'd',
+		}, {
+			latLng : [ 41, 15.5 ],
+			name : 'e'
+		}, {
+			latLng : [ 38.5, 22 ],
+			name : 'f',
+		}, {
+			latLng : [ 36, 128 ],
+			name : 'g',
+		}, {
+			latLng : [ 49.5, 10 ],
+			name : 'h',
+		}, {
+			latLng : [ 33, 54 ],
+			name : 'i'
+		}, {
+			latLng : [ 22, 78.5 ],
+			name : 'j',
+		}, {
+			latLng : [ 36, 138.5 ],
+			name : 'k',
+		}, {
+			latLng : [ 39, 39 ],
+			name : 'l',
+		}, {
+			latLng : [ 39, 33 ],
+			name : 'm'
+		} ];
+		
+
+		$(function() {
+			$('#world-map').vectorMap({
+				map : 'world_mill_en',
+				series : {
+					regions : [ {
+						values : gdpData,
+						scale : [ '#989898', '#282828' ],
+						normalizeFunction : 'polynomial'
+					} ]
+				},
+				onLabelShow : function(e, el, code) {
+					el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
+				},
+
+				scaleColors : [ '#C8EEFF', '#0071A4' ],
+				normalizeFunction : 'polynomial',
+				hoverOpacity : 0.7,
+				hoverColor : false,
+				markerStyle : {
+					initial : {
+						fill : '#F8E23B',
+						stroke : '#383f47'
+					}
+				},
+				regionStyle : {
+					initial : {
+						fill : '#C0C0C0',
+						stroke : '#383f47'
+					}
+				},
+				backgroundColor : '#FFFFFF',
+				markers : markers,
+				onMarkerClick : function(events, index) {
+					var itemurl = "../map_timeline/content.html?itemId=" + markers[index].name;
+					window.open(itemurl,"_self");
+				},
+			});
+		});
+	</script>
+			
+			
+			
+			
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 			</div>
 		</div>

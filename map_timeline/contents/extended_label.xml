@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects_list>
 <object>
+<<<<<<< HEAD
 <Title>3050 Sudanic helmet</Title>
 <Region>Originated from Ottoman Empire, modified in Sudanic Region, North Africa</Region>
 <Date>1500s, modified in 1800s</Date>
 <Artifact_type>Helmet</Artifact_type>
 <Materials>Russeted iron with gilding</Materials>
 <Weight>5 lb. 9 oz.</Weight>
+=======
+<Accession_number>1135</Accession_number>
+<Region></Region>
+<Artifact_type></Artifact_type>
+<Date></Date>
+<Materials></Materials>
+<Weight></Weight>
+>>>>>>> refs/remotes/origin/master
 <Dimensions></Dimensions>
+<<<<<<< HEAD
 <Extended_label>This well travelled helmet had a working life that spanned many centuries. It was originally made for a high-ranking nobleman in the Ottoman Empire—you can still see much of its original gilded surface. But the arrow-shaped noseguard was made much later, and is typical of the Sudanic region, just south of the Sahara desert in Africa. Over the years, the Ottoman Empire abandoned its traditional arms and armor in favor of the equipment used by European armies. This helmet was sold off as “military surplus,” eventually finding its way across the Sahara to a region where the older styles of Islamic arms were still in use.</Extended_label>
 <Picture></Picture>
+=======
+<Extended_label>object a There is nothing in here. The actual content will be somewhere else.</Extended_label>
+<Picture>1135.png</Picture>
+>>>>>>> refs/remotes/origin/master
 </object>
 
 <object>
+<<<<<<< HEAD
 <Title>2973 Conch shell helmet</Title>
 <Region>Japan</Region>
 <Date>1618</Date>
@@ -70,6 +85,17 @@
 <Dimensions>L. 39.9 cm. x W. 23.1 cm. x H 25.5 cm</Dimensions>
 <Extended_label>This helmet was probably worn by a bodyguard to a noble family. The form is Italian in origin, but was also popular in Austria, Germany and France during the second half of the 1500s. The stylized curves on this example imitate helmets that Renaissance artists imagined on the heads of ancient Greek and Roman warriors. An almost identical helmet in the Art Institute of Chicago also bears the date 1585, as found here on a small, curving band at the front end of the comb.</Extended_label>
 <Picture></Picture>
+=======
+<Accession_number>1504</Accession_number>
+<Region></Region>
+<Artifact_type></Artifact_type>
+<Date></Date>
+<Materials></Materials>
+<Weight></Weight>
+<Dimensions></Dimensions>
+<Extended_label>object b There is nothing in here. The actual content will be somewhere else.</Extended_label>
+<Picture>1504.png</Picture>
+>>>>>>> refs/remotes/origin/master
 </object>
 
 <object>
