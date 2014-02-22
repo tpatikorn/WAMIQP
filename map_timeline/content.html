@@ -41,9 +41,9 @@ body p {
 			xmlDoc = xmlhttp.responseXML;
 			var x = xmlDoc.getElementsByTagName("object");
 			for (i = 0; i < x.length; i++) {
-				var accession_number = x[i]
-						.getElementsByTagName("Accession_number")[0].childNodes[0].nodeValue;
-				if (accession_number === Accession_number) {
+				var idNum = x[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+				if (idNum === Accession_number) {
+					var toreturn = x[i].getElementsByTagName(tagname)[0].childNodes[0].nodeValue;
 					return x[i].getElementsByTagName(tagname)[0].childNodes[0].nodeValue;
 				}
 			}
@@ -56,7 +56,7 @@ body p {
 		var index = url.substring(url.indexOf("=") + 1);
 		var newimg = "contents/object_images/" + getDataFromAccessNumber(index, "Picture");
 		var newtxt = getDataFromAccessNumber(index, "Extended_label");
-		$("#item_image").attr("src", newimg);
+		document.getElementById("item_image").setAttribute("src", newimg);
 		document.getElementById("item_label").innerHTML = newtxt;
 		//alert(url);
 	</script>
