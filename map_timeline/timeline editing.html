@@ -63,8 +63,8 @@
 			var urltext = "content.html?" + idtext;
 			$.colorbox({
 				iframe : true,
-				innerWidth : "880px",
-				innerHeight : "580px",
+				innerWidth : "497px",
+				innerHeight : "297px",
 				initialWidth : "497px",
 				initialHeight : "297px",
 				scrolling : false,
@@ -98,7 +98,7 @@
 				var towrite = "";
 				towrite = towrite + "<div align=\"center\" class=\"picture_div\">"+"<img src=\"contents\\object_images\\"+picname;
 				towrite = towrite + "\" class=\"thumbnail\" onclick=\"submitId("+idNum+")\" />";
-				towrite = towrite + date ;
+				towrite = towrite + date "\" class=\"thumbnail\" ;
 				towrite = towrite + "</div>";
 				//alert(towrite);
 				document.write(towrite);
@@ -165,11 +165,11 @@
 				step : 20,
 				value : -700,
 			});
-			$("#timeline_slider").css('height', '20px');
+			$("#timeline_slider").css('height', '10px');
 			$("#timeline_slider").css('width', '900px');
 			$("#timeline_slider").css('background', 'rgb(250,250,250)');
-			$("#timeline_slider .ui-slider-handle").css('height', '30px');
-			$("#timeline_slider .ui-slider-handle").css('width', '70px');
+			$("#timeline_slider .ui-slider-handle").css('height', '20px');
+			$("#timeline_slider .ui-slider-handle").css('width', '20px');
 			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
 			$( "#timeline_slider" ).slider({
 				slide:function (event, ui) {

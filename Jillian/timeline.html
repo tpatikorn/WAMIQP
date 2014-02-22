@@ -23,6 +23,7 @@
 
 <title>Timeline</title>
 <style type="text/css">
+
 .image_in_box {
 	position: absolute;
 	right: 0px;
@@ -38,24 +39,16 @@
 }
 
 .thumbnail {
-	width: 250px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	border: 5px solid black;
 	float: left;
-	margin-right: 5px;
-}
-
-.picture_div {
-	width: 250px;
-	height: 350px;
-	float: left;
-	
+	margin-right: 10px;
 }
 </style>
 </head>
 
 <body>
-
 	<script>
 		function submitId(item_id) {
 			var element = document.getElementById(item_id);
@@ -63,8 +56,8 @@
 			var urltext = "content.html?" + idtext;
 			$.colorbox({
 				iframe : true,
-				innerWidth : "880px",
-				innerHeight : "580px",
+				innerWidth : "497px",
+				innerHeight : "297px",
 				initialWidth : "497px",
 				initialHeight : "297px",
 				scrolling : false,
@@ -77,7 +70,6 @@
 	</script>
 
 	<script>
-	
 		function generateLinks() {
 			if (window.XMLHttpRequest) {
 				// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -89,24 +81,18 @@
 			xmlhttp.open("GET", "contents/extended_label.xml", false);
 			xmlhttp.send();
 			xmlDoc = xmlhttp.responseXML;
-
 			var x = xmlDoc.getElementsByTagName("object");
 			for (i = 0; i < x.length; i++) {
 				var idNum = x[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
 				var picname = x[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
-				var date = x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue;
 				var towrite = "";
-				towrite = towrite + "<div align=\"center\" class=\"picture_div\">"+"<img src=\"contents\\object_images\\"+picname;
+				towrite = towrite + "<img src=\"contents\\object_images\\"+picname;
 				towrite = towrite + "\" class=\"thumbnail\" onclick=\"submitId("+idNum+")\" />";
-				towrite = towrite + date ;
-				towrite = towrite + "</div>";
 				//alert(towrite);
 				document.write(towrite);
-
 			}
 		}
 	</script>
-
 	<div id="page" class="page_all">
 		<div id="content"
 			style="width: 98%; height: 83%; padding: 1% 1% 1% 1%">
@@ -116,10 +102,10 @@
 			<div id="example_box"
 				style="width: 100%; height: 100%; overflow: hidden; position: relative; background-color: #f0f0f0">
 				<div id="side_outside"
-					style="width: 83%; height: 350px; background-color: #f0f0f0; overflow: hidden; margin: 80px; margin-top: 100px; overflow: hidden">
+					style="width: 90%; height: 210px; background-color: #ffffff; overflow: hidden; margin: 50px; margin-top: 100px; overflow: hidden">
 					<!--this is the actual box-->
 					<div id="side_inside"
-						style="height: 10px; width: 2500px; background-color: #f0f0f0">
+						style="height: 210px; width: 2880px; background-color: #FFF">
 						<script>
 						generateLinks();
 						</script>
@@ -153,7 +139,7 @@
 	<script type="text/javascript">
 		function SideScroll(location) {
 			location = (700 + location);
-			timelocation = 3000*location/2800;
+			timelocation = 1970*location/2800;
 			$("#side_outside").scrollLeft(timelocation);
 		};
 	</script>
@@ -165,11 +151,11 @@
 				step : 20,
 				value : -700,
 			});
-			$("#timeline_slider").css('height', '20px');
+			$("#timeline_slider").css('height', '10px');
 			$("#timeline_slider").css('width', '900px');
 			$("#timeline_slider").css('background', 'rgb(250,250,250)');
-			$("#timeline_slider .ui-slider-handle").css('height', '30px');
-			$("#timeline_slider .ui-slider-handle").css('width', '70px');
+			$("#timeline_slider .ui-slider-handle").css('height', '20px');
+			$("#timeline_slider .ui-slider-handle").css('width', '20px');
 			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
 			$( "#timeline_slider" ).slider({
 				slide:function (event, ui) {
