@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+
+div p h1 {
+	font-family: Arial;
+}
+
+.page_all {
+	width: 1010px;
+	height: 750px;
+	background-color: #d0d0d0;
+	overflow: hidden;
+}
