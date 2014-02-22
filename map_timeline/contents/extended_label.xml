@@ -69,7 +69,7 @@
 <Materials>Bronze; iron</Materials>
 <Weight>4 lb. 4 oz.</Weight>
 <Dimensions>(H) 7 1/2" x (W) 7 5/8" x (D) skull 8 5/8"</Dimensions>
-<Id>1135</Id>
+<Id>11350</Id>
 <Extended_label>The Montefortino style of helmet originated among the Celtic people of Gaul (modern France). Tribes of Celts invaded Italy after 400 B.C.E., sacking Rome around 390. </Extended_label>
 <Picture>1135.jpg</Picture>
 	<lat>41</lat>
@@ -162,8 +162,8 @@
 <Id>2971.2</Id>
 <Extended_label>When the Mughals invaded northern India around 1500, they brought with them the artistic traditions of Islamic Persia, including Persian arms and armor. The kulah khud is the most common type of Persian helmet, one of many variants of the widespread Islamic form with rounded skull, top spike, and mail neck-guard. But the embossed pattern on the helmet-bowl, reminiscent of the lotus flower, is typically Indian. This is only one of many Indian variants on the Persian kulah khud.</Extended_label>
 <Picture>2971.2.jpg</Picture>
-	<lat></lat>
-	<Lng></Lng>
+	<lat>70</lat>
+	<Lng>25</Lng>
 </object>
 
 <object>
@@ -177,8 +177,8 @@
 <Id>2558</Id>
 <Extended_label>A tall central spire or spike is a common feature of Islamic helmets, with many variants in regions influenced by Islamic culture. This particular style is found in Persian, Turkish, and Russian helmets, reflecting the cultural interchange between these three areas at the borders of Europe and Asia. The peak at the front is a particularly Turkish feature, reflecting the cultural influence of the Ottomans in Eastern Europe at the height of their empire in the 1500s.</Extended_label>
 <Picture>2558.jpg</Picture>
-	<lat></lat>
-	<Lng></Lng>
+	<lat>23</lat>
+	<Lng>65</Lng>
 </object>
 
 <object>
@@ -192,7 +192,7 @@
 <Id>1903</Id>
 <Extended_label>When the Mongol empire spread across Asia in the 1200s, it created a vast political and economic network that fostered cultural interchange for centuries to come. Helmets similar to this can be found in Mongolia, China, and Korea, but the closest parallels appear to be Chinese infantry helmets from around 1800—this particular example is fairly plain, suggesting that it was made for an ordinary footsoldier. The finial at the top once held a tube for a horsehair plume. The brim at the front is a feature that originated in the Islamic Middle East, and was imported across the Mongol trade routes to East Asia. The paired holes around the lower edge once held a padded fabric neck-guard.</Extended_label>
 <Picture>1903.jpg</Picture>
-	<lat></lat>
-	<Lng></Lng>
+	<lat>12</lat>
+	<Lng>46</Lng>
 </object>
 </objects_list>
