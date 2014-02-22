@@ -135,15 +135,22 @@ function generateListsOfIds() {
 	<script>
 	
 	
-	var Id;
-	Id = generateListsOfIds();
-	var markers = [ { 
-		latLng : [ getDataFromAccessNumber(Id[0], 'lat'), getDataFromAccessNumber(Id[0], 'Lng') ],
-		name: Id[0],
-	} ];
-	
 
-	
+		var Id;
+		Id = generateListsOfIds();
+		var markers = [];
+		var i = 0;
+		var len = Id.length;
+
+		for (; i < len;) {
+			markers.push({
+				latLng : [ getDataFromAccessNumber(Id[i], 'lat'),
+						getDataFromAccessNumber(Id[i], 'Lng') ],
+				name : Id[i]
+			});
+			i = i + 1;
+		}
+
 		$(function() {
 			$('#world-map').vectorMap({
 				map : 'world_mill_en',
@@ -176,7 +183,7 @@ function generateListsOfIds() {
 				},
 				backgroundColor : '#FFFFFF',
 				markers : markers,
-				onMarkerClick : function (events, index) {
+				onMarkerClick : function(events, index) {
 					var item_id = markers[index].name;
 					submitId(item_id);
 				},
