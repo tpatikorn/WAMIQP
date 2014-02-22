@@ -17,7 +17,7 @@
 	type="text/javascript"></script>
 <script src="resources/colorbox/jquery.colorbox.js"
 	type="text/javascript"></script>
-<script src="resources/jquery.ui.touch-punch/touch-punch.min.js"
+<script src="resources/touch-punch/jquery.ui.touch-punch.min.js"
 	type="text/javascript"></script>
 <script src="resources/hammer/hammer.js" type="text/javascript"></script>
 
@@ -177,7 +177,57 @@
 				}
 			}); 
 		});
-	</script>
+		$("#timeline_slider").draggable();
+		</script>
+		
+		<script>
+			function doScroll(amount,direction) {
+				var val = $("#timeline_slider").slider("value");
+				if(direction === "left") {
+					val = val + amount;
+				}
+				if(direction === "right") {
+					val = val - amount;
+				}
+				SideScroll(val);
+				$("#timeline_slider").slider({
+					value : val
+				});
+			}
+		</script>
+		
+		<script>
+		function slideScroll(total_amount,direction) {
+			var baseval = 20;
+			var amount = baseval;
+			var timeout = baseval;
+			var times = total_amount/amount;
+			var i = 0;
+			alert(times);
+			for (; i < times; i = i+1) {
+					setTimeout(function() {
+						doScroll(amount, direction)
+					}, timeout);
+					timeout = baseval * i;
+				}
+			}
+		</script>
+		
+		<script>
+			var toggle = document.getElementById('side_inside');
+
+			Hammer(toggle).on("dragleft", function(event) {
+				event.gesture.preventDefault();
+				event.gesture.stopDetect();
+				slideScroll(300,"left");
+			});
+		
+			Hammer(toggle).on("dragright", function(event) {
+				event.gesture.preventDefault();
+				event.gesture.stopDetect();
+				slideScroll(300,"right");
+			});
+			</script>
 
 </body>
 </html>
