@@ -6,11 +6,32 @@
 <title>Untitled Document</title>
 <style type="text/css">
 th {
-text-align:left;
-vertical-align: top;
+	text-align: left;
+	vertical-align: top;
 }
+
 body p {
 	font-family: Arial;
+}
+
+#item_title {
+	width: 450px;
+	height: 40px;
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	font-size: 30px;
+}
+
+#item_label {
+	style ="height: 250px;
+	width: 450px;
+	margin: 10px;
+	font-size: 18px;
+}
+
+#item_region, #item_date, #item_type, #item_mtr, #item_wght, th {
+	font-size: 18px;
 }
 </style>
 </head>
@@ -21,36 +42,33 @@ body p {
 			<div style="width: 350px; height: 500px; float: left; background-color: white">
 				<img id="item_image" style="max-height: 480px;max-width: 330px; display:block; margin: auto; margin-top: 10px" />
 			</div>
-			<div id="item_title" style="width: 450px; height:40px; float: left; text-align: center; font-weight: bold; font-size: 18px"></div>
-			<div style="width: 450px; height: 150px; float: left;">
-			<table>
-			<tr>
-			<th>Region</th>
-			<td id="item_region"></td>
-			</tr>
-			<tr>
-			<th>Date</th>
-			<td id="item_date"></td>
-			</tr>
-			<tr>
-			<th>Type</th>
-			<td id="item_type"></td>
-			</tr>
-			<tr>
-			<th>Materials</th>
-			<td id="item_mtr"></td>
-			</tr>
-			<tr>
-			<th>Weight</th>
-			<td id="item_wght"></td>
-			</tr>
-			
-
-			</table>
-				
+			<div id="item_title"></div>
+			<div style="width: 450px; height: 180px; float: left; display:block">
+				<table>
+					<tr>
+						<th>Region</th>
+						<td id="item_region"></td>
+					</tr>
+					<tr>
+						<th>Date</th>
+						<td id="item_date"></td>
+					</tr>
+					<tr>
+						<th>Type</th>
+						<td id="item_type"></td>
+					</tr>
+					<tr>
+						<th>Materials</th>
+						<td id="item_mtr"></td>
+					</tr>
+					<tr>
+						<th>Weight</th>
+						<td id="item_wght"></td>
+					</tr>
+				</table>
 			</div>
-			<div style="width: 450px; height: 250px; float: left; font-size: 16px; overflow-y: auto;overflow-x:hidden">
-				<div id="item_label" style="height:250px; width: 450px; margin: 10px; font-size: 16px;"></div>
+			<div style="width: 450px; height: 250px; overflow-y: auto;overflow-x:hidden;float:left">
+				<div id="item_label" style="width: 430px; margin-right: 20px"></div>
 			</div>
 		</div>
 	</div>
