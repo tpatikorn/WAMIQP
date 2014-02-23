@@ -38,11 +38,8 @@
 }
 
 .thumbnail {
-	width: 250px;
-	height: 300px;
-	border: 5px solid black;
-	float: left;
-	margin-right: 5px;
+	max-width: 240px;
+	max-height: 290px;
 }
 
 .picture_div {
@@ -51,12 +48,22 @@
 	float: left;
 	font-size: 22px;
 	font-weight: bold;
+	display: block;
+	margin-right: 20px;
+	text-align: center;
+	border: 4px solid black;
+}
+
+.picture_border {
+	min-width: 240px;
+	min-height: 290px;
+	display: block;
+	margin-top: 5px
 }
 </style>
 </head>
 
 <body>
-
 	<script>
 		function submitId(item_id) {
 			var element = document.getElementById(item_id);
@@ -97,10 +104,10 @@
 				var picname = x[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
 				var date = x[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue;
 				var towrite = "";
-				towrite = towrite + "<div align=\"center\" class=\"picture_div\">"+"<img src=\"contents\\object_images\\"+picname;
-				towrite = towrite + "\" class=\"thumbnail\" onclick=\"submitId("+idNum+")\" />";
-				towrite = towrite + date ;
-				towrite = towrite + "</div>";
+				towrite = towrite + "<div class=\"picture_div\" onclick=\"submitId("+idNum+")\">";
+				towrite = towrite + "<div class=\"picture_border\">";
+				towrite = towrite + "<img src=\"contents\\object_images\\"+picname + "\" class=\"thumbnail\"/> </div> <br>";
+				towrite = towrite + date + "</div>";
 				//alert(towrite);
 				document.write(towrite);
 
@@ -120,7 +127,7 @@
 					style="width: 83%; height: 360px; background-color: #f0f0f0; overflow: hidden; margin: 80px; margin-top: 100px; overflow: hidden">
 					<!--this is the actual box-->
 					<div id="side_inside"
-						style="height: 300px; width: 3600px; background-color: #f0f0f0">
+						style="height: 300px; width: 3650px; background-color: #f0f0f0">
 						<script>
 						generateLinks();
 						</script>
@@ -216,16 +223,18 @@
 		<script>
 			var toggle = document.getElementById('side_inside');
 
-			Hammer(toggle).on("dragleft", function(event) {
+			Hammer(toggle).on("dragend", function(event) {
 				event.gesture.preventDefault();
 				event.gesture.stopDetect();
-				slideScroll(400,"left");
-			});
-		
-			Hammer(toggle).on("dragright", function(event) {
-				event.gesture.preventDefault();
-				event.gesture.stopDetect();
-				slideScroll(400,"right");
+				var dx = event.gesture.deltaX;
+				var direction = "right";
+				if(dx < 0) {
+					dx = 0 - dx;
+					direction = "left";
+				}
+				if (dx >= 100) {
+					slideScroll(400,direction);
+				}
 			});
 			</script>
 
