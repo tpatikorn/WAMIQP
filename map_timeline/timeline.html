@@ -120,7 +120,7 @@
 					style="width: 83%; height: 360px; background-color: #f0f0f0; overflow: hidden; margin: 80px; margin-top: 100px; overflow: hidden">
 					<!--this is the actual box-->
 					<div id="side_inside"
-						style="height: 100px; width: 2500px; background-color: #f0f0f0">
+						style="height: 300px; width: 3600px; background-color: #f0f0f0">
 						<script>
 						generateLinks();
 						</script>
@@ -128,7 +128,7 @@
 				</div>
 				<div style="width: 100%; height: 10%">
 
-					<div id="timeline_slider" style="margin-left: 50px"></div>
+					<div id="timeline_slider" style="margin-left: 85px"></div>
 				</div>
 			</div>
 		</div>
@@ -167,7 +167,7 @@
 				value : -700,
 			});
 			$("#timeline_slider").css('height', '20px');
-			$("#timeline_slider").css('width', '900px');
+			$("#timeline_slider").css('width', '800px');
 			$("#timeline_slider").css('background', 'rgb(250,250,250)');
 			$("#timeline_slider .ui-slider-handle").css('height', '30px');
 			$("#timeline_slider .ui-slider-handle").css('width', '70px');
@@ -219,13 +219,13 @@
 			Hammer(toggle).on("dragleft", function(event) {
 				event.gesture.preventDefault();
 				event.gesture.stopDetect();
-				slideScroll(300,"left");
+				slideScroll(20,"left");
 			});
 		
 			Hammer(toggle).on("dragright", function(event) {
 				event.gesture.preventDefault();
 				event.gesture.stopDetect();
-				slideScroll(300,"right");
+				slideScroll(20,"right");
 			});
 			</script>
 
