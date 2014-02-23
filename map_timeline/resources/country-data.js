@@ -1,4 +1,4 @@
-var gdpData = {
+var countryData = {
   "RU": 1,
   "TR": 1,
   "IN": 1,
