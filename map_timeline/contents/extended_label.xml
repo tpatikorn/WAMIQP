@@ -14,6 +14,7 @@
 <Id>1135</Id>
 <Extended_label>This well travelled helmet had a working life that spanned many centuries. It was originally made for a high-ranking nobleman in the Ottoman Empire—you can still see much of its original gilded surface. But the arrow-shaped noseguard was made much later, and is typical of the Sudanic region, just south of the Sahara desert in Africa. Over the years, the Ottoman Empire abandoned its traditional arms and armor in favor of the equipment used by European armies. This helmet was sold off as “military surplus,” eventually finding its way across the Sahara to a region where the older styles of Islamic arms were still in use.</Extended_label>
 <Picture>1135.jpg</Picture><lat>63</lat><Lng>93</Lng>
+	<country>RU</country>
 </object>
 
 <object>
@@ -28,7 +29,7 @@
 <Extended_label>Nowadays, soldiers wear camouflage in order to avoid being seen. In feudal Japan, military leaders went to great lengths to get noticed. As armies grew and samurai wore increasingly fine armor, top-level commanders took to wearing outlandish helmets to set themselves apart.</Extended_label>
 <Picture>2973.jpg</Picture>
 	<lat>46.5</lat><Lng>22</Lng>
-	
+<country>TR</country>
 </object>
 
 <object>
@@ -44,6 +45,7 @@
 <Picture>239.jpg</Picture>
 	<lat>43.2</lat>
 	<Lng>12</Lng>
+<country>IN</country>
 </object>
 
 <object>
@@ -59,6 +61,7 @@
 <Picture>416.jpg</Picture>
 	<lat>52.3</lat>
 	<Lng>11.8</Lng>
+<country>IT</country>
 </object>
 
 <object>
@@ -74,6 +77,7 @@
 <Picture>1135.jpg</Picture>
 	<lat>41</lat>
 	<Lng>15.5</Lng>
+<country>JP</country>
 </object>
 
 <object>
@@ -89,6 +93,7 @@
 <Picture>1191.jpg</Picture>
 	<lat>38.5</lat>
 	<Lng>22</Lng>
+<country>FR</country>
 </object>
 
 <object>
@@ -104,6 +109,7 @@
 <Picture>1998.01.jpg</Picture>
 	<lat>36</lat>
 	<Lng>128</Lng>
+<country>IR</country>
 </object>
 
 <object>
@@ -119,6 +125,7 @@
 	
 	<Picture>2553.jpg</Picture><lat>49.5</lat>
 	<Lng>10</Lng>
+<country>KR</country>
 </object>
 
 <object>
@@ -134,6 +141,7 @@
 <Picture>3007.1.jpg</Picture>
 	<lat>33</lat>
 	<Lng>54</Lng>
+<country>GR</country>
 </object>
 
 <object>
@@ -149,6 +157,7 @@
 <Picture>nn.228.jpg</Picture>
 	<lat>22</lat>
 	<Lng>78.5</Lng>
+<country>DE</country>
 </object>
 
 <object>
@@ -164,6 +173,7 @@
 <Picture>2971.2.jpg</Picture>
 	<lat>70</lat>
 	<Lng>25</Lng>
+<country>TH</country>
 </object>
 
 <object>
@@ -179,6 +189,7 @@
 <Picture>2558.jpg</Picture>
 	<lat>23</lat>
 	<Lng>65</Lng>
+<country>CH</country>
 </object>
 
 <object>
@@ -194,5 +205,6 @@
 <Picture>1903.jpg</Picture>
 	<lat>12</lat>
 	<Lng>46</Lng>
+<country>RU</country>
 </object>
 </objects_list>
