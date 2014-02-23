@@ -184,6 +184,10 @@ function generateListsOfIds() {
 				},
 				backgroundColor : '#FFFFFF',
 				markers : markers,
+				onMarkerOver : function(events, index) {
+					var item_id = markers[index].name;
+					submitId(item_id);
+				},
 				onMarkerClick : function(events, index) {
 					var item_id = markers[index].name;
 					submitId(item_id);
