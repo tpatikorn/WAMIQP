@@ -10,3 +10,10 @@ div p h1 {
 	background-color: #d0d0d0;
 	overflow: hidden;
 }
+
+.menu_image {
+	height: 40px;
+	padding: 30px 0px 30px 30px;
+	float: right;
+	border: 0px;
+}
