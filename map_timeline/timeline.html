@@ -145,7 +145,7 @@
 
 				<h1 style="margin:20px;float:left"><b>timeline</b></h1>
 
-				<a href="help.html"><img src="resources/images/help.png" 
+				<a href="help.html" class="help_page"><img src="resources/images/help.png" 
 				alt="help page" class="menu_image"/></a>
 				<a href="map.html"><img src="resources/images/map.png" 
 				alt="map page" class="menu_image"/></a>
@@ -218,26 +218,37 @@
 				}
 			}
 		</script>
-		
-		<script>
-			var toggle = document.getElementById('side_inside');
 
-			Hammer(toggle).on("dragend", function(event) {
-				event.gesture.preventDefault();
-				event.gesture.stopDetect();
-				var dx = event.gesture.deltaX;
-				var direction = "right";
-				if(dx < 0) {
-					dx = 0 - dx;
-					direction = "left";
-				}
-				if (dx >= 100) {
-					slideScroll(400,direction);
-				} else {
-					return false;
-				}
-			});
-			</script>
+	<script>
+		var toggle = document.getElementById('side_inside');
+
+		Hammer(toggle).on("dragend", function(event) {
+			event.gesture.preventDefault();
+			event.gesture.stopDetect();
+			var dx = event.gesture.deltaX;
+			var direction = "right";
+			if (dx < 0) {
+				dx = 0 - dx;
+				direction = "left";
+			}
+			if (dx >= 100) {
+				slideScroll(400, direction);
+			} else {
+				return false;
+
+			}
+		});
+	</script>
+	<script>
+		jQuery('a.help_page').colorbox({
+			initialHeight : 540,
+			initialWidth : 540,
+			innerHeight : 540,
+			innerWidth : 540,
+			top : 60,
+			left : 240
+		});
+	</script>
 
 </body>
 </html>
