@@ -180,9 +180,9 @@
 			event.gesture.stopDetect();
 			var dx = event.gesture.deltaX;
 			if (dx >= 50) {
-				slideScroll(150);
-			} else if (dx <= -50) {
 				slideScroll(-150);
+			} else if (dx <= -50) {
+				slideScroll(150);
 			}
 			else {
 				return false;

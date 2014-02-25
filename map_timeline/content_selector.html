@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<link href="resources/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+<link href="resources/colorbox.css" rel="stylesheet" type="text/css" />
+<script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="resources/colorbox/jquery.colorbox.js" type="text/javascript"></script>
+<script src="resources/map_timeline.js" type="text/javascript"></script>
+<link href="resources/map_timeline.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<title>Content Selector</title>
+</head>
+<style type="text/css">
+.thumbnail {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.picture_border {
+	width: 100px;
+	height: 100px;
+	float: left;
+	display: block;
+	border:2px solid black;
+	text-align: center;
+}
+</style>
+<body>
+	<div id="overall" style="height:350px;width:350px;margin: 20px">
+		<script>
+			var url = location.toString();
+			var countryCode = url.substring(url.indexOf("=") + 1);
+			var objectList = getObjectListFromXML();
+			var wantedObject = new Array();
+			var i = 0;
+			for (; i < objectList.length; i = i + 1) {
+				var objectCC = objectList[i].getElementsByTagName("country")[0].childNodes[0].nodeValue;
+				if (objectCC === countryCode) {
+					wantedObject.push(objectList[i]);
+				}
+			}
+			var len = wantedObject.length;
+			if (len == 0) {
+				document.write("There is no object in " + countryCode);
+			} else if (len == 1) {
+				var ID = wantedObject[0].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+				submitId(ID);
+			} else {
+				for (i = 0; i < wantedObject.length; i++) {
+					var idNum = wantedObject[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+					var picname = wantedObject[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
+					document.write("<div class=\"picture_border\" onclick=\"submitId("+ idNum + ")\">");
+					document.write("<img src=\"contents\\object_images\\"+ picname);
+					document.write("\" class=\"thumbnail\"/> </div>");
+				}
+				var content_div = document.getElementById("content_div");
+			}
+		</script>
+
+	</div>
+
+
+</body>
+</html>
