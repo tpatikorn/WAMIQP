@@ -1,17 +1,22 @@
-function submitId(item_id) {
-	var idtext = "itemId=" + item_id;
-	var urltext = "content.html?" + idtext;
+function popUpPage(page, height, width) {
+	var urltext = page;
 	$.colorbox({
 		iframe : true,
-		innerWidth : "880px",
-		innerHeight : "600px",
+		innerWidth : width + "px",
+		innerHeight : height + "px",
 		initialWidth : "0px",
 		initialHeight : "600px",
 		scrolling : false,
-		top : "50px",
-		left : "65px",
+		top : 0.5 * (750 - height) + "px",
+		left : 0.5 * (1010 - width) + "px",
 		href : urltext
 	});
+}
+
+function submitId(item_id) {
+	var idtext = "itemId=" + item_id;
+	var urltext = "content.html?" + idtext;
+	popUpPage(urltext, 600, 880);
 }
 
 function getDataFromAccessNumber(Accession_number, tagname) {
