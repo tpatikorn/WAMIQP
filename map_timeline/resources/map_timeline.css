@@ -4,14 +4,14 @@ div p h1 {
 	font-family: Arial;
 }
 
-.page_all {
+div.page_all {
 	width: 1010px;
 	height: 750px;
 	background-color: #ffffff;
 	overflow: hidden;
 }
 
-.menu_image {
+img.menu_image {
 	height: 40px;
 	padding: 30px 0px 30px 30px;
 	float: right;
