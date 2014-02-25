@@ -14,21 +14,24 @@
 </head>
 <style type="text/css">
 .thumbnail {
-	max-width: 100px;
-	max-height: 100px;
+	max-width: 120px;
+	max-height: 160px;
 }
 
 .picture_border {
-	width: 100px;
-	height: 100px;
+	width: 120px;
+	height: 160px;
 	float: left;
 	display: block;
 	border:2px solid black;
 	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-family: Arial;
 }
 </style>
 <body>
-	<div id="overall" style="height:350px;width:350px;margin: 20px">
+	<div id="overall" style="height:260px;width:600px;margin: 10px 12px 0px 12px;text-align:center">
 		<script>
 			var url = location.toString();
 			var countryCode = url.substring(url.indexOf("=") + 1);
@@ -42,7 +45,14 @@
 				}
 			}
 			var len = wantedObject.length;
+			var objectText = "There";
+			var expected_width = 144*len;
+			document.write("<p style=\"font-size:18px;font-family:arial\">There are ");
+			document.write(len+" objects in this region. <br>");
+			document.write("Tab on an image to view object details. </p>");
+			document.write("<div style=\"height:260px;width:"+ expected_width +"px;margin: auto; text-align:center\">");
 			if (len == 0) {
+				//This should not appear
 				document.write("There is no object in " + countryCode);
 			} else if (len == 1) {
 				var ID = wantedObject[0].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
@@ -57,9 +67,10 @@
 				}
 				var content_div = document.getElementById("content_div");
 			}
+			document.write("</div>");
 		</script>
-
-	</div>
+		</div>
+	
 
 
 </body>

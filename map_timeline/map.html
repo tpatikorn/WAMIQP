@@ -105,23 +105,25 @@
 								},
 								backgroundColor : '#FFFFFF',
 								markers : markers,
-								onMarkerOver : function(events, index) {
+								onMarkerClick : function(events, index) {
 									var item_id = markers[index].name;
 									submitId(item_id);
 								},
 								onRegionClick : function(events, countryCode) {
 									if(countryData[countryCode] > 0) {
-										popUpPage("content_selector.html?countryCode="+countryCode,'350','350');
+										popUpPage("content_selector.html?countryCode="+countryCode,'280','620');
 									}
+								},
+								
+								//please comment out onMarkerOver and onRegionOver.
+								onMarkerOver : function(events, index) {
+									var item_id = markers[index].name;
+									submitId(item_id);
 								},
 								onRegionOver : function(events, countryCode) {
 									if(countryData[countryCode] > 0) {
-										popUpPage("content_selector.html?countryCode="+countryCode,'350','350');
+										popUpPage("content_selector.html?countryCode="+countryCode,'280','620');
 									}
-								},
-								onMarkerClick : function(events, index) {
-									var item_id = markers[index].name;
-									submitId(item_id);
 								},
 							});
 					});

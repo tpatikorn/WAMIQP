@@ -7,7 +7,7 @@ function popUpPage(page, height, width) {
 		initialWidth : "0px",
 		initialHeight : "0px",
 		scrolling : false,
-		top : 0.5 * (750 - height) + "px",
+		top : 0.5 * (650 - height) + "px",
 		left : 0.5 * (1010 - width) + "px",
 		href : urltext
 	});

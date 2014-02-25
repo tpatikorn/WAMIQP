@@ -34,10 +34,10 @@
 	height: 400px;
 	float: left;
 	font-size: 22px;
-	font-weight: bold;
 	display: block;
 	margin-right: 20px;
 	text-align: center;
+	font-family: Arial;
 }
 
 .picture_border {
@@ -98,6 +98,7 @@
 					doScroll(amount)
 				}, timeout);
 				timeout = baseval * i;
+				var val = $("#timeline_slider").slider("value");
 			}
 		}
 	</script>
@@ -108,8 +109,10 @@
 			<!-- example box is just to demonstrate the size and location of your space -->
 			<!-- feel free to change/delete it if you want -->
 			<div id="timelinebox" style="width: 990px; height: 430px; overflow: hidden; position: relative; padding-top: 80px; ">
-				<div id="sidebox_left" style="width: 80px; height: 250px; float:left; padding-top: 150px">
-				<img src="resources/images/arrow_left.jpg" onclick="slideScroll(-200)" style="height: 100px; max-width:80px"/>
+				<div id="sidebox_left" 
+					style="width: 80px; height: 250px; float:left; padding-top: 150px;border:0px">
+					<img id="arrow_left" src="resources/images/arrow_left.jpg" onclick="slideScroll(-200)" 
+						style="height: 100px; max-width:80px;border:0px"/>
 				</div>
 				<div id="timelinebox_outside"
 					style="width: 830px; height: 400px; overflow-x: hidden; float:left">
@@ -121,8 +124,10 @@
 						</script>
 					</div>
 				</div>
-				<div id="sidebox_right" style="width: 80px; height: 250px; float:left; padding-top: 150px">
-				<img src="resources/images/arrow_right.jpg" onclick="slideScroll(200)" style="height: 100px; max-width:80px"/>
+				<div id="sidebox_right" 
+					style="width: 80px; height: 250px; float:left; padding-top: 150px;border:0px">
+					<img id="arrow_right" src="resources/images/arrow_right.jpg" onclick="slideScroll(200)" 
+						style="height: 100px; max-width:80px;border:0px"/>
 				</div>
 			</div>
 			<div style="width: 990px; height: 100px; margin-top: 40px">
@@ -165,6 +170,26 @@
 			$( "#timeline_slider" ).slider({
 				slide:function (event, ui) {
 					SideScroll(ui.value, $("#timelinebox_outside"));
+				}
+			});
+
+			$( "#timeline_slider" ).slider({
+				change: function (event, ui) {
+					var val = ui.value;
+					var arrow_right = document.getElementById("arrow_right");
+					var arrow_left = document.getElementById("arrow_left");
+					if(val >= 990) {
+						arrow_left.setAttribute("src", "resources/images/arrow_left.jpg");
+						arrow_right.setAttribute("src", "resources/images/blank.jpg");
+						return false;
+					} else if(val <= 10) {
+						arrow_left.setAttribute("src", "resources/images/blank.jpg");
+						arrow_right.setAttribute("src", "resources/images/arrow_right.jpg");
+						return false;
+					} else {
+						arrow_left.setAttribute("src", "resources/images/arrow_left.jpg");
+						arrow_right.setAttribute("src", "resources/images/arrow_right.jpg");
+					}
 				}
 			}); 
 		});
