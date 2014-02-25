@@ -38,12 +38,12 @@
 
 .thumbnail {
 	max-width: 240px;
-	max-height: 290px;
+	max-height: 320px;
 }
 
 .picture_div {
 	width: 250px;
-	height: 350px;
+	height: 400px;
 	float: left;
 	font-size: 22px;
 	font-weight: bold;
@@ -54,7 +54,7 @@
 
 .picture_border {
 	min-width: 240px;
-	min-height: 290px;
+	min-height: 320px;
 	display: block;
 	margin-bottom: 10px;
 	border: 4px solid black;
@@ -111,82 +111,19 @@
 				document.write(towrite);
 
 			}
+			
+			var timelinebox_inside = document.getElementById("timelinebox_inside");
+			document.wanted_width = x.length * 270;
+			$(timelinebox_inside).css('width',document.wanted_width);
 		}
 	</script>
-
-	<div id="page" class="page_all">
-		<div id="content"
-			style="width: 98%; height: 83%; padding: 1% 1% 1% 1%">
-			<!-- Your work space is 900px by 450px -->
-			<!-- example box is just to demonstrate the size and location of your space -->
-			<!-- feel free to change/delete it if you want -->
-			<div id="example_box"
-				style="width: 100%; height: 100%; overflow: hidden; position: relative; background-color: #ffffff">
-				<div id="side_outside"
-					style="width: 83%; height: 360px; background-color: #ffffff; overflow: hidden; margin: 80px; margin-top: 100px; overflow: hidden">
-					<!--this is the actual box-->
-					<div id="side_inside"
-						style="height: 300px; width: 3650px; background-color: #ffffff">
-						<script>
-						generateLinks();
-						</script>
-					</div>
-				</div>
-				<div style="width: 100%; height: 10%">
-
-					<div id="timeline_slider" style="margin-left: 85px"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
-		<div id="menu" style="width: 98%; height: 13%; padding: 0% 1% 2% 1%">
-			<div id="page_name" style="width: 100%; height: 100%; background-color: #ffffff">
-
-				<h1 style="margin:20px;float:left"><b>timeline</b></h1>
-
-				<a href="help.html" class="help_page"><img src="resources/images/help.png" 
-				alt="help page" class="menu_image"/></a>
-				<a href="map.html"><img src="resources/images/map.png" 
-				alt="map page" class="menu_image"/></a>
-				<a href="home.html"> <img src="resources/images/home.png" 
-				alt="home page" class="menu_image"/></a>
-
-			</div>
-			
-		</div>
-
-	</div>
 	<script type="text/javascript">
 		function SideScroll(location) {
-			location = (700 + location);
-			timelocation = 3000*location/2800;
-			$("#side_outside").scrollLeft(timelocation);
+			location = 0.001 * location * (document.wanted_width - 750);
+			$("#timelinebox_outside").scrollLeft(location);
 		};
 	</script>
-	<script>
-		$(function() {
-			$("#timeline_slider").slider({
-				min : -700,
-				max : 2100,
-				step : 20,
-				value : -700,
-			});
-			$("#timeline_slider").css('height', '20px');
-			$("#timeline_slider").css('width', '800px');
-			$("#timeline_slider").css('background', 'rgb(250,250,250)');
-			$("#timeline_slider .ui-slider-handle").css('height', '30px');
-			$("#timeline_slider .ui-slider-handle").css('width', '70px');
-			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
-			$( "#timeline_slider" ).slider({
-				slide:function (event, ui) {
-					SideScroll(ui.value);
-				}
-			}); 
-		});
-		$("#timeline_slider").draggable();
-		</script>
-		
+	
 		<script>
 			function doScroll(amount,direction) {
 				var val = $("#timeline_slider").slider("value");
@@ -205,9 +142,9 @@
 		
 		<script>
 		function slideScroll(total_amount,direction) {
-			var baseval = 20;
+			var baseval = 10;
 			var amount = baseval;
-			var timeout = baseval;
+			var timeout = baseval*20;
 			var times = total_amount/amount;
 			var i = 0;
 			for (; i < times; i = i+1) {
@@ -219,8 +156,80 @@
 			}
 		</script>
 
+	<div id="page" class="page_all">
+		<div id="content"
+			style="width: 990px; height: 630px; padding: 10px">
+			<!-- Your work space is 900px by 450px -->
+			<!-- example box is just to demonstrate the size and location of your space -->
+			<!-- feel free to change/delete it if you want -->
+			<div id="timelinebox"
+				style="width: 990px; height: 430px; overflow: hidden; position: relative; padding-top: 80px; ">
+				<div id="sidebox_left" style="width: 80px; height: 250px; float:left; padding-top: 150px">
+				<img src="resources/images/arrow_left.jpg" onclick="slideScroll(200,'right')" style="height: 100px; max-width:80px"/>
+				</div>
+				<div id="timelinebox_outside"
+					style="width: 830px; height: 400px; overflow-x: hidden; float:left">
+					<!--this is the actual box-->
+					<div id="timelinebox_inside"
+						style="height: 400px; background-color: #ffffff">
+						<script>
+						generateLinks();
+						</script>
+					</div>
+				</div>
+				<div id="sidebox_right" style="width: 80px; height: 250px; float:left; padding-top: 150px">
+				<img src="resources/images/arrow_right.jpg" onclick="slideScroll(200,'left')" style="height: 100px; max-width:80px"/>
+				</div>
+			</div>
+			<div style="width: 990px; height: 100px; margin-top: 40px">
+				<div id="timeline_slider" style="margin-left: 75px">
+				</div>
+			</div>
+		</div>
+
+		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
+		<div id="menu" style="width: 990px; height: 120px; padding: 10px">
+			<div id="page_name" style="width: 990px; height: 120px; background-color: #ffffff">
+
+				<img src="resources/images/timeline.png"  alt="timeline" class="menu_image" style="float:left"/>
+				<a href="help.html" class="help_page"><img src="resources/images/help.png" 
+				alt="help page" class="menu_image"/></a>
+				<a href="map.html"><img src="resources/images/map.png" 
+				alt="map page" class="menu_image"/></a>
+				<a href="home.html"> <img src="resources/images/home.png" 
+				alt="home page" class="menu_image"/></a>
+
+			</div>
+			
+		</div>
+
+	</div>
 	<script>
-		var toggle = document.getElementById('side_inside');
+		$(function() {
+			$("#timeline_slider").slider({
+				min : 0,
+				max : 1000,
+				step : 5,
+				value : 0,
+			});
+			$("#timeline_slider").css('height', '20px');
+			$("#timeline_slider").css('width', '820px');
+			$("#timeline_slider").css('background', 'rgb(250,250,250)');
+			$("#timeline_slider .ui-slider-handle").css('height', '30px');
+			$("#timeline_slider .ui-slider-handle").css('width', '70px');
+			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
+			$( "#timeline_slider" ).slider({
+				slide:function (event, ui) {
+					SideScroll(ui.value);
+				}
+			}); 
+		});
+		$("#timeline_slider").draggable();
+		</script>
+		
+
+	<script>
+		var toggle = document.getElementById('timelinebox_inside');
 
 		Hammer(toggle).on("dragend", function(event) {
 			event.gesture.preventDefault();
@@ -231,8 +240,8 @@
 				dx = 0 - dx;
 				direction = "left";
 			}
-			if (dx >= 100) {
-				slideScroll(400, direction);
+			if (dx >= 50) {
+				slideScroll(150, direction);
 			} else {
 				return false;
 
