@@ -4,13 +4,12 @@ function submitId(item_id) {
 	$.colorbox({
 		iframe : true,
 		innerWidth : "880px",
-		innerHeight : "580px",
-		initialWidth : "880px",
-		initialHeight : "580px",
+		innerHeight : "600px",
+		initialWidth : "0px",
+		initialHeight : "600px",
 		scrolling : false,
-		top : "60px",
+		top : "50px",
 		left : "65px",
-		title : idtext,
 		href : urltext
 	});
 }
