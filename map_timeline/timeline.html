@@ -137,9 +137,9 @@
 
 		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
 		<div id="menu" style="width: 98%; height: 13%; padding: 0% 1% 2% 1%">
-			<div id="page_name" style="width: 100%; height: 100%" background-color: #ffffff">
+			<div id="page_name" style="width: 100%; height: 100%">
 
-				<img src="resources/images/timeline.png"  alt="timeline" class="menu_image" style="float:left"/>
+				<img src="resources/images/title_timeline.png"  alt="timeline" class="menu_image" style="float:left"/>
 				<a href="#"><img src="resources/images/help.png" 
 				alt="help page" class="menu_image" onclick="popUpPage('help.html','500','400')"/></a>
 				<a href="map.html"><img src="resources/images/map.png" 
@@ -164,10 +164,25 @@
 			$("#timeline_slider").css('width', '820px');
 			$("#timeline_slider").css('background', 'rgb(250,250,250)');
 			$("#timeline_slider .ui-slider-handle").css('height', '30px');
-			$("#timeline_slider .ui-slider-handle").css('width', '70px');
+			$("#timeline_slider .ui-slider-handle").css('width', '30px');
 			$("#timeline_slider .ui-slider-handle").css('background','rgb(70,70,70)');
 			$( "#timeline_slider" ).slider({
 				slide:function (event, ui) {
+					var val = ui.value;
+					var arrow_right = document.getElementById("arrow_right");
+					var arrow_left = document.getElementById("arrow_left");
+					if(val >= 1000) {
+						arrow_left.setAttribute("src", "resources/images/arrow_left.jpg");
+						arrow_right.setAttribute("src", "resources/images/blank.jpg");
+						return false;
+					} else if(val <= 0) {
+						arrow_left.setAttribute("src", "resources/images/blank.jpg");
+						arrow_right.setAttribute("src", "resources/images/arrow_right.jpg");
+						return false;
+					} else {
+						arrow_left.setAttribute("src", "resources/images/arrow_left.jpg");
+						arrow_right.setAttribute("src", "resources/images/arrow_right.jpg");
+					}
 					SideScroll(ui.value, $("#timelinebox_outside"));
 				}
 			});
