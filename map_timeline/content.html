@@ -38,16 +38,8 @@ div {
 		<div style=" font-size: 18px; width: 400px">
 			<table style="max-height: 180px; margin-left: 20px">
 				<tr>
-					<th>Region</th>
-					<td id="item_region"></td>
-				</tr>
-				<tr>
 					<th>Date</th>
 					<td id="item_date"></td>
-				</tr>
-				<tr>
-					<th>Type</th>
-					<td id="item_type"></td>
 				</tr>
 				<tr>
 					<th>Materials</th>
@@ -56,6 +48,14 @@ div {
 				<tr>
 					<th>Weight</th>
 					<td id="item_wght"></td>
+				</tr>
+				<tr>
+					<th>Region</th>
+					<td id="item_region"></td>
+				</tr>
+				<tr>
+					<th>Credit</th>
+					<td id="item_credit"></td>
 				</tr>
 			</table>
 			<div style="width: 400px; height: 360px; overflow-y: auto;overflow-x:hidden">
@@ -83,8 +83,8 @@ div {
 		var newdate = getDataFromAccessNumber(index, "Date");
 		document.getElementById("item_date").innerHTML = newdate;
 		
-		var newtype = getDataFromAccessNumber(index, "Artifact_type");
-		document.getElementById("item_type").innerHTML = newtype;
+		var newcre = getDataFromAccessNumber(index, "Artifact_credit");
+		document.getElementById("item_credit").innerHTML = newcre;
 		
 		var newmtr = getDataFromAccessNumber(index, "Materials");
 		document.getElementById("item_mtr").innerHTML = newmtr;
