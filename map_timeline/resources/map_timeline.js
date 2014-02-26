@@ -16,7 +16,7 @@ function popUpPage(page, height, width) {
 function submitId(item_id) {
 	var idtext = "itemId=" + item_id;
 	var urltext = "content.html?" + idtext;
-	popUpPage(urltext, 600, 880);
+	popUpPage(urltext, 640, 880);
 }
 
 /**
