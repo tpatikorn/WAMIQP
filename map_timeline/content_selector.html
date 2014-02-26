@@ -62,7 +62,7 @@
 					var idNum = wantedObject[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
 					var picname = wantedObject[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
 					document.write("<div class=\"picture_border\" onclick=\"submitId("+ idNum + ")\">");
-					document.write("<img src=\"contents\\object_images\\"+ picname);
+					document.write("<img src=\"contents/object_images/"+ picname);
 					document.write("\" class=\"thumbnail\"/> </div>");
 				}
 				var content_div = document.getElementById("content_div");

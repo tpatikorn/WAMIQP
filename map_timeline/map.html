@@ -115,7 +115,9 @@
 									}
 								},
 								
-								//please comment out onMarkerOver and onRegionOver.
+								//onMarkerOver and onRegionOver is only for
+								//touch-screen-based machines.
+								//for regular pc, these should be commented out
 								onMarkerOver : function(events, index) {
 									var item_id = markers[index].name;
 									submitId(item_id);
