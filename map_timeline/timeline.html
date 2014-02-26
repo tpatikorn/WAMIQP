@@ -110,7 +110,7 @@
 			<div id="timelinebox" style="width: 990px; height: 430px; overflow: hidden; position: relative; padding-top: 80px; ">
 				<div id="sidebox_left" 
 					style="width: 80px; height: 250px; float:left; padding-top: 150px;border:0px">
-					<img id="arrow_left" src="resources/images/arrow_left.png" onclick="slideScroll(-200)" 
+					<img id="arrow_left" src="resources/images/arrow_left.png" onclick="slideScroll(-100)" 
 						style="height: 100px; max-width:80px;border:0px"/>
 				</div>
 				<div id="timelinebox_outside"
@@ -125,7 +125,7 @@
 				</div>
 				<div id="sidebox_right" 
 					style="width: 80px; height: 250px; float:left; padding-top: 150px;border:0px">
-					<img id="arrow_right" src="resources/images/arrow_right.png" onclick="slideScroll(200)" 
+					<img id="arrow_right" src="resources/images/arrow_right.png" onclick="slideScroll(100)" 
 						style="height: 100px; max-width:80px;border:0px"/>
 				</div>
 			</div>
@@ -141,7 +141,7 @@
 
 				<img src="resources/images/title_timeline.png"  alt="timeline" class="menu_image" style="float:left"/>
 				<a href="#"><img src="resources/images/help.png" 
-				alt="help page" class="menu_image" onclick="popUpPage('help.html','500','400')"/></a>
+				alt="help page" class="menu_image" onclick="popUpPage('help_timeline.html','640','840')"/></a>
 				<a href="map.html"><img src="resources/images/map.png" 
 				alt="map page" class="menu_image"/></a>
 				<a href="home.html"> <img src="resources/images/home.png" 
@@ -218,10 +218,10 @@
 			event.gesture.preventDefault();
 			event.gesture.stopDetect();
 			var dx = event.gesture.deltaX;
-			if (dx >= 50) {
-				slideScroll(-150);
-			} else if (dx <= -50) {
-				slideScroll(150);
+			if (dx >= 20) {
+				slideScroll(-180);
+			} else if (dx <= -20) {
+				slideScroll(180);
 			}
 			else {
 				return false;
