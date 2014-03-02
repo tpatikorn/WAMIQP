@@ -3,24 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-<link href="resources/jQueryAssets/jquery.ui.core.min.css"
-	rel="stylesheet" type="text/css">
-<link href="resources/jQueryAssets/jquery.ui.theme.min.css"
-	rel="stylesheet" type="text/css">
-<link href="resources/jQueryAssets/jquery.ui.slider.min.css"
-	rel="stylesheet" type="text/css">
-<link href="resources/colorbox.css" rel="stylesheet" type="text/css" />
-<link href="resources/map_timeline.css" rel="stylesheet" type="text/css" />
-<script src="resources/jQueryAssets/jquery-1.8.3.min.js"
-	type="text/javascript"></script>
-<script src="resources/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js"
-	type="text/javascript"></script>
-<script src="resources/colorbox/jquery.colorbox.js"
-	type="text/javascript"></script>
-<script src="resources/touch-punch/jquery.ui.touch-punch.min.js"
-	type="text/javascript"></script>
+<link href="resources/jQueryAssets/jquery.ui.core.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.theme.min.css" rel="stylesheet" type="text/css">
+<link href="resources/jQueryAssets/jquery.ui.slider.min.css" rel="stylesheet" type="text/css">
+<script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="resources/jQueryAssets/jquery-ui-1.9.2.slider.custom.min.js" type="text/javascript"></script>
+<script src="resources/colorbox/jquery.colorbox.js" type="text/javascript"></script>
+<script src="resources/touch-punch/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
 <script src="resources/hammer/hammer.js" type="text/javascript"></script>
-<script src="resources/map_timeline.js" type="text/javascript"></script>
+
+<link href="colorbox.css" rel="stylesheet" type="text/css">
+<link href="map_timeline.css" rel="stylesheet" type="text/css">
+<script src="map_timeline.js" type="text/javascript"></script>
 
 <title>Timeline</title>
 <style type="text/css">
@@ -52,38 +46,60 @@
 
 <body>
 	<script>
-		function generateLinks() {
+		/**
+		* Generate timeline, including links, images, etc.
+		* (The middle thing)
+		* Generated content depends solely on contents.xml
+		*/
+		function generateTimeline() {
 			var objectArray = getObjectListFromXML();
 			for (i = 0; i < objectArray.length; i++) {
-				var idNum = objectArray[i].getElementsByTagName("Id")[0].childNodes[0].nodeValue;
+				var idNum = objectArray[i].getElementsByTagName("ID")[0].childNodes[0].nodeValue;
 				var picname = objectArray[i].getElementsByTagName("Picture")[0].childNodes[0].nodeValue;
 				var date = objectArray[i].getElementsByTagName("Date")[0].childNodes[0].nodeValue;
+				document.write("<a href=\"#\">");
 				document.write("<div class=\"picture_div\" onclick=\"submitId(" + idNum);
 				document.write(")\"> <div class=\"picture_border\">");
-				document.write("<img src=\"contents/object_images/"+picname);
-				document.write("\" class=\"thumbnail\"/> </div>" + date + "</div>");
+				document.write("<img src=\"contents/object_images/" + picname);
+				document.write("\" class=\"thumbnail\"/> </a> </div>" + date + "</div>");
 			}
-
 			var box_inside = document.getElementById("timelinebox_inside");
 			document.wanted_width = objectArray.length * 270;
 			$(box_inside).css('width', document.wanted_width);
 		}
 	</script>
+
 	<script>
-		function SideScroll(location) {
+		/**
+		* This function moves the location of the scrollbar to
+		* specified location.
+		* Note: location is the location you want, not the distant
+		*/
+		function changeScrollbar(location) {
 			location = 0.001 * location * (document.wanted_width - 750);
 			$("#timelinebox_outside").scrollLeft(location);
 		};
-
-		function doScroll(amount, target) {
+		
+		/**
+		* This function slide the slider by amount.
+		* Positive value = to the right
+		* Negative value = to the left
+		*/
+		function changeSlider(amount) {
 			var val = $("#timeline_slider").slider("value");
 			val = val + amount;
-			SideScroll(val);
+			changeScrollbar(val);
 			$("#timeline_slider").slider({
 				value : val
 			});
 		}
 		
+		/**
+		* This function slides both slider and scrollbar
+		* "smoothly" by total_amount. 
+		* Positive value = to the right
+		* Negative value = to the left
+		*/
 		function slideScroll(total_amount) {
 			var baseval = 10;
 			var amount = baseval;
@@ -95,7 +111,7 @@
 			var i = 0;
 			for (; i < times; i = i + 1) {
 				setTimeout(function() {
-					doScroll(amount)
+					changeSlider(amount)
 				}, timeout);
 				timeout = baseval * i;
 			}
@@ -107,10 +123,11 @@
 			<!-- Your work space is 900px by 450px -->
 			<!-- example box is just to demonstrate the size and location of your space -->
 			<!-- feel free to change/delete it if you want -->
-			<div id="timelinebox" style="width: 990px; height: 430px; overflow: hidden; position: relative; padding-top: 80px; ">
+			<div id="timelinebox" 
+				style="width: 990px; height: 430px; overflow: hidden; position: relative; padding-top: 80px; ">
 				<div id="sidebox_left" 
 					style="width: 80px; height: 250px; float:left; padding-top: 150px;border:0px">
-					<img id="arrow_left" src="resources/images/arrow_left.png" onclick="slideScroll(-100)" 
+					<img id="arrow_left" src="resources/images/blank.jpg" onclick="slideScroll(-100)" 
 						style="height: 100px; max-width:80px;border:0px"/>
 				</div>
 				<div id="timelinebox_outside"
@@ -118,8 +135,9 @@
 					<!--this is the actual box-->
 					<div id="timelinebox_inside"
 						style="height: 100px; background-color: #ffffff">
+						
 						<script>
-						generateLinks();
+							generateTimeline();
 						</script>
 					</div>
 				</div>
@@ -130,15 +148,13 @@
 				</div>
 			</div>
 			<div style="width: 990px; height: 100px; margin-top: 20px">
-				<div id="timeline_slider" style="margin-left: 75px">
-				</div>
+				<div id="timeline_slider" style="margin-left: 75px"> </div>
 			</div>
 		</div>
 
-		<!-- DO NOT TOUCH ANYTHING IN THIS DIV -->
-		<div id="menu" style="width: 98%; height: 13%; padding: 0% 1% 2% 1%">
+		<!-- Bottom menu -->
+		<div id="menu" style="width: 990px; height: 100px; padding: 0px 10px 20px 10px">
 			<div id="page_name" style="width: 100%; height: 100%">
-
 				<img src="resources/images/title_timeline.png"  alt="timeline" class="menu_image" style="float:left"/>
 				<a href="#"><img src="resources/images/help.png" 
 				alt="help page" class="menu_image" onclick="popUpPage('help_timeline.html','640','840')"/></a>
@@ -146,13 +162,26 @@
 				alt="map page" class="menu_image"/></a>
 				<a href="home.html"> <img src="resources/images/home.png" 
 				alt="home page" class="menu_image"/></a>
-
 			</div>
-			
 		</div>
-
 	</div>
+	
 	<script>
+		function setArrows(state) {
+			var arrow_right = document.getElementById("arrow_right");
+			var arrow_left = document.getElementById("arrow_left");
+			if(state==="leftOnly") {
+				arrow_left.setAttribute("src", "resources/images/arrow_left.png");
+				arrow_right.setAttribute("src", "resources/images/blank.jpg");
+			} else if(state==="rightOnly") {
+				arrow_left.setAttribute("src", "resources/images/blank.jpg");
+				arrow_right.setAttribute("src", "resources/images/arrow_right.png");
+			} else {
+				arrow_left.setAttribute("src", "resources/images/arrow_left.png");
+				arrow_right.setAttribute("src", "resources/images/arrow_right.png");
+			}
+		}
+		
 		$(function() {
 			$("#timeline_slider").slider({
 				min : 0,
@@ -169,46 +198,34 @@
 			$( "#timeline_slider" ).slider({
 				slide:function (event, ui) {
 					var val = ui.value;
-					var arrow_right = document.getElementById("arrow_right");
-					var arrow_left = document.getElementById("arrow_left");
 					if(val >= 1000) {
-						arrow_left.setAttribute("src", "resources/images/arrow_left.png");
-						arrow_right.setAttribute("src", "resources/images/blank.jpg");
+						setArrows("leftOnly");
 						return false;
 					} else if(val <= 0) {
-						arrow_left.setAttribute("src", "resources/images/blank.jpg");
-						arrow_right.setAttribute("src", "resources/images/arrow_right.png");
+						setArrows("rightOnly");
 						return false;
 					} else {
-						arrow_left.setAttribute("src", "resources/images/arrow_left.png");
-						arrow_right.setAttribute("src", "resources/images/arrow_right.png");
+						setArrows("appearAll");
 					}
-					SideScroll(ui.value, $("#timelinebox_outside"));
+					changeScrollbar(ui.value, $("#timelinebox_outside"));
 				}
 			});
-
+			
 			$( "#timeline_slider" ).slider({
 				change: function (event, ui) {
 					var val = ui.value;
-					var arrow_right = document.getElementById("arrow_right");
-					var arrow_left = document.getElementById("arrow_left");
 					if(val >= 990) {
-						arrow_left.setAttribute("src", "resources/images/arrow_left.png");
-						arrow_right.setAttribute("src", "resources/images/blank.jpg");
-						return false;
+						setArrows("leftOnly");
 					} else if(val <= 10) {
-						arrow_left.setAttribute("src", "resources/images/blank.jpg");
-						arrow_right.setAttribute("src", "resources/images/arrow_right.png");
-						return false;
+						setArrows("rightOnly");
 					} else {
-						arrow_left.setAttribute("src", "resources/images/arrow_left.png");
-						arrow_right.setAttribute("src", "resources/images/arrow_right.png");
+						setArrows("appearAll");
 					}
 				}
 			}); 
 		});
 		$("#timeline_slider").draggable();
-		</script>
+	</script>
 		
 
 	<script>
@@ -225,7 +242,6 @@
 			}
 			else {
 				return false;
-
 			}
 		});
 	</script>

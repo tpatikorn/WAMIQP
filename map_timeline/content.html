@@ -2,8 +2,8 @@
 <html>
 <head>
 <script src="resources/jQueryAssets/jquery-1.8.3.min.js" type="text/javascript"></script>
-<script src="resources/map_timeline.js" type="text/javascript"></script>
-<link href="resources/map_timeline.css" rel="stylesheet" type="text/css" />
+<link href="map_timeline.css" rel="stylesheet" type="text/css">
+<script src="map_timeline.js" type="text/javascript"></script>
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <style type="text/css">
@@ -39,26 +39,37 @@ div {
 		</div>
 		<div id="item_title" style="max-height: 70px;width: 400px"></div>
 		<div style="font-size: 18px; width: 400px;margin-top:8px">
-			<table style="max-height: 180px; margin-left: 20px;text-align: left">
-				<tr>
-					<th>Date</th>
-					<td id="item_date"></td>
-				</tr>
-				<tr>
-					<th>Materials</th>
-					<td id="item_mtr"></td>
-				</tr>
-				<tr>
-					<th>Weight</th>
-					<td id="item_wght"></td>
-				</tr>
-				<tr>
-					<th>Region</th>
-					<td id="item_region"></td>
-				</tr>
-			</table>
+			<!-- edit the following table to change the displayed fields -->
+			<script>
+			if (window.XMLHttpRequest) {
+				// code for IE7+, Firefox, Chrome, Opera, Safari
+				xmlhttp = new XMLHttpRequest();
+			} else {
+				// code for IE6, IE5
+				xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			xmlhttp.open("GET", xmlFileLocation, false);
+			xmlhttp.send();
+			xmlDoc = xmlhttp.responseXML;
+			var display_attr = xmlDoc.getElementsByTagName("Display_Attributes")[0].childNodes[0].nodeValue;
+			var attr_list = CSVparser(display_attr);
+			document.write("<table id='attr_table' style=\"margin-left: 20px;text-align: left\">");
+			var i2 = 0;
+			var url = location.toString();
+			var id = url.substring(url.indexOf("=") + 1);
+			for(;i2<attr_list.length;) {
+				var tagname = attr_list[i2];
+				var data = getDataFromAccessNumber(id, tagname);
+				document.write("<tr>");
+				document.write("<th>" + tagname + "</th>");
+				document.write("<td>" + data + "</td>");
+				document.write("</tr>");
+				i2 = i2 + 1;
+			}
+			document.write("</table>");
+			</script>			
 			<div style="width: 420px; height: auto; overflow-y: auto;overflow-x:hidden">
-				<div id="item_label" style="margin: 10px 10px 0px 20px; height: 360px"></div>
+				<div id="item_label" style="margin: 10px 10px 0px 20px; height: 360px;background-color:white"></div>
 			</div>
 		</div>
 	</div>
@@ -66,30 +77,23 @@ div {
 	<script>
 		var url = location.toString();
 		var index = url.substring(url.indexOf("=") + 1);
-
+		
 		var newttl = getDataFromAccessNumber(index, "Title");
 		document.getElementById("item_title").innerHTML = newttl;
-		
+
 		var newimg = "contents/object_images/" + getDataFromAccessNumber(index, "Picture");
 		document.getElementById("item_image").setAttribute("src", newimg);
-
-		var newtxt = getDataFromAccessNumber(index, "Extended_label");
+		
+		var newtxt = getDataFromAccessNumber(index, "Label");
 		document.getElementById("item_label").innerHTML = newtxt;
-		
-		var newreg = getDataFromAccessNumber(index, "Region");
-		document.getElementById("item_region").innerHTML = newreg;
-		
-		var newdate = getDataFromAccessNumber(index, "Date");
-		document.getElementById("item_date").innerHTML = newdate;
 		
 		var newcre = getDataFromAccessNumber(index, "Credit");
 		document.getElementById("item_credit").innerHTML = newcre;
-		
-		var newmtr = getDataFromAccessNumber(index, "Materials");
-		document.getElementById("item_mtr").innerHTML = newmtr;
-		
-		var newwght = getDataFromAccessNumber(index, "Weight");
-		document.getElementById("item_wght").innerHTML = newwght;
+
+		var size_title = document.getElementById("item_title").clientHeight;
+		var size_table = document.getElementById("attr_table").clientHeight;
+		var size_label = 540 - (size_title + size_table);
+		document.getElementById("item_label").height = size_label;
 		//alert(url);
 	</script>
 

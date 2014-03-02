@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Object_List>
+<Display_Attributes>UsedIn,VH,Latitude,Longitude</Display_Attributes>
+<Object>
+<Title>Help for Timeline Page</Title>
+<Picture>demo_1.jpg</Picture>
+<Label>This is "Help for Timeline Page"</Label>
+<UsedIn>timeline page (popup)</UsedIn>
+<VH>Neutral/Vertical</VH>
+<ID>1</ID>
+<Credit>Peachie</Credit>
+<Latitude>48</Latitude>
+<Longitude>1.2</Longitude>
+<Country>FR</Country>
+<Date>Impeachible</Date>
+</Object>
+
+<Object>
+<Title>Help for Map Page</Title>
+<Picture>demo_2.jpg</Picture>
+<Label>This is "Help for Map Page"</Label>
+<UsedIn>map page (popup)</UsedIn>
+<VH>Neutral/Vertical</VH>
+<ID>2</ID>
+<Credit>Peachie</Credit>
+<Latitude>44.5</Latitude>
+<Longitude>1.2</Longitude>
+<Country>FR</Country>
+<Date>Before time begins</Date>
+</Object>
+
+<Object>
+<Title>Map "Icon" for Home</Title>
+<Picture>demo_3.png</Picture>
+<Label>This is an image from home page.</Label>
+<UsedIn>home.html</UsedIn>
+<VH>Horizontal</VH>
+<ID>3</ID>
+<Credit>Peachie</Credit>
+<Latitude>48</Latitude>
+<Longitude>4.5</Longitude>
+<Country>FR</Country>
+<Date>During Big Bang</Date>
+</Object>
+
+<Object>
+<Title>Map "Icon" for Home</Title>
+<Picture>demo_4.png</Picture>
+<Label>This is an image from home page.</Label>
+<UsedIn>home.html</UsedIn>
+<VH>Horizontal</VH>
+<ID>4</ID>
+<Credit>Peachie</Credit>
+<Latitude>44.5</Latitude>
+<Longitude>4.5</Longitude>
+<Country>FR</Country>
+<Date>0 C.E.</Date>
+</Object>
+</Object_List>
