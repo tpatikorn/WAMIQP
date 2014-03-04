@@ -7,14 +7,14 @@
 <meta charset="utf-8">
 <title>Untitled Document</title>
 <style type="text/css">
-strong, th, td{
+strong,th,td {
 	text-align: left;
 	font-family: Arial;
-	vertical-align:text-top;
+	vertical-align: text-top;
 }
 
 div {
-	float:left;
+	float: left;
 	font-family: Arial;
 }
 
@@ -26,6 +26,15 @@ div {
 	font-size: 24px;
 	font-family: Arial;
 }
+
+#item_labelbox {
+	width: 420px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin-top: 2px;
+	-webkit-overflow-scrolling: touch;
+}
+
 </style>
 </head>
 
@@ -67,9 +76,10 @@ div {
 				i2 = i2 + 1;
 			}
 			document.write("</table>");
-			</script>			
-			<div style="width: 420px; height: auto; overflow-y: auto;overflow-x:hidden">
-				<div id="item_label" style="margin: 10px 10px 0px 20px; height: 360px;background-color:white"></div>
+			</script>
+			<strong style="margin: 10px 10px 0px 20px">Description</strong>
+			<div id="item_labelbox">
+				<div id="item_label" style="margin: 0px 10px 0px 20px; height: 360px;background-color:white"></div>
 			</div>
 		</div>
 	</div>
@@ -84,7 +94,7 @@ div {
 		var newimg = "contents/object_images/" + getDataFromAccessNumber(index, "Picture");
 		document.getElementById("item_image").setAttribute("src", newimg);
 		
-		var newtxt = getDataFromAccessNumber(index, "Label");
+		var newtxt = getDataFromAccessNumber(index, "Description");
 		document.getElementById("item_label").innerHTML = newtxt;
 		
 		var newcre = getDataFromAccessNumber(index, "Credit");
@@ -92,8 +102,8 @@ div {
 
 		var size_title = document.getElementById("item_title").clientHeight;
 		var size_table = document.getElementById("attr_table").clientHeight;
-		var size_label = 540 - (size_title + size_table);
-		document.getElementById("item_label").height = size_label;
+		var size_label = 520 - (size_title + size_table);
+		document.getElementById("item_labelbox").style.height = size_label+'px';
 		//alert(url);
 	</script>
 

@@ -2,9 +2,22 @@
 <Object_List>
 <Display_Attributes>UsedIn,BeautyLevel,Latitude,Longitude</Display_Attributes>
 <Object>
-<Title>Yellow Map for The First of All Things</Title>
+<Title>Yellow Map for the First of All Things. Believe Me or Not? I Just Want to Make This Very Long.</Title>
 <Picture>demo_1.jpg</Picture>
-<Label>"Wow. Much yellow. So old." - Doge</Label>
+<Description>"Wow. Much yellow. So old." - Doge
+I'll just duplicate this to demonstrate how long description looks like.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+"Wow. Much yellow. So old." - Doge. "Wow. Much yellow. So old." - Doge.
+See, this is how it will look like.</Description>
 <UsedIn>The very first version on the app while we still had not decided on the map</UsedIn>
 <BeautyLevel>-9000</BeautyLevel>
 <ID>1</ID>
@@ -18,7 +31,22 @@
 <Object>
 <Title>The Raw Map from Open Street Map</Title>
 <Picture>demo_2.jpg</Picture>
-<Label>"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March</Label>
+<Description>"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March. 
+I'll just duplicate this to demonstrate how long description looks like.
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+"Wow. So raw. Much color." - Doge. "I don't remember it be in any versions" - March
+See, this is how it will look like.</Description>
 <UsedIn>A revision or two, I think.</UsedIn>
 <BeautyLevel>10</BeautyLevel>
 <ID>2</ID>
@@ -32,7 +60,7 @@
 <Object>
 <Title>The "Art" of Map</Title>
 <Picture>demo_3.jpg</Picture>
-<Label>March's sad attempt to use Photoshop to edit a map image. It was accidentally, I mean intentionally, turned into a piece, or pieces, or arts, in some forms, I guess.</Label>
+<Description>March's sad attempt to use Photoshop to edit a map image. It was accidentally, I mean intentionally, turned into a piece, or pieces, or arts, in some forms, I guess.</Description>
 <UsedIn>It was never used. It is too good.</UsedIn>
 <BeautyLevel>OVER NINE THOUSAND!</BeautyLevel>
 <ID>3</ID>
@@ -46,7 +74,7 @@
 <Object>
 <Title>Non-artistic, Usable Map from OSM</Title>
 <Picture>demo_4.jpg</Picture>
-<Label>After a few sad attempts to do it right, I mean after several pieces of arts were created, March has finally created an image of a map (barely) usable for the earlier versions of the app.</Label>
+<Description>After a few sad attempts to do it right, I mean after several pieces of arts were created, March has finally created an image of a map (barely) usable for the earlier versions of the app.</Description>
 <UsedIn>Any versions after "Yellow Map for The First of All Things" and before jVectorMap took control of the universe.</UsedIn>
 <BeautyLevel>100/100</BeautyLevel>
 <ID>4</ID>

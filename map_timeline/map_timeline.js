@@ -1,3 +1,7 @@
+/**
+ * author Thanaporn Patikorn
+ */
+
 var xmlFileLocation = "contents/contents.xml"; /* the location of the content xml file */
 
 /**
