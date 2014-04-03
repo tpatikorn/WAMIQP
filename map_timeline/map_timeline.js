@@ -52,6 +52,7 @@ function getObjectListFromXML() {
 	xmlhttp.open("GET", xmlFileLocation, false);
 	xmlhttp.send();
 	xmlDoc = xmlhttp.responseXML;
+
 	return xmlDoc.getElementsByTagName("Object");
 }
 

@@ -42,7 +42,7 @@
 					function generateListsOfIds() {
 						var objectArray = getObjectListFromXML();
 						var listofid = new Array();
-						for (i = 0; i < objectArray.length; i++) {
+						for (var i = 0; i < objectArray.length; i++) {
 							listofid[i] = objectArray[i].getElementsByTagName('ID')[0].childNodes[0].nodeValue;
 						}
 						return listofid;
